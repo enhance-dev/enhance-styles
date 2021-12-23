@@ -34,13 +34,10 @@ module.exports = function cssmitten (props) {
 }
 
 function styles (state={}) {
-  const config = state.config || {}
-  const queries = config.queries || {}
-  const query = state.query || ''
+  const { config={}, query='' } = state
   const label = query
     ? `-${query}`
     : ''
-  const width = queries[query]
   return /*css*/`
 ${typography({config, label})}
 ${layout({config, label})}

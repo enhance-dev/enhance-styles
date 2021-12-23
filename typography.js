@@ -12,7 +12,7 @@ const wordbreak = require('./word-break')
 const transform = require('./transform')
 
 module.exports = function typography(state={}) {
-  const { label:query } = state
+  const { label:query='' } = state
   return `
 ${family(query)}
 ${sizes(state)}

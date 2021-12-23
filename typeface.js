@@ -1,5 +1,5 @@
 module.exports = function typeface(state={}) {
-  const { config } = state
+  const { config={} } = state
   const { base=16 } = config
   return /*css*/`
 /* TYPEFACE */

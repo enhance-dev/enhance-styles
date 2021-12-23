@@ -2,7 +2,7 @@ const Scale = require('./scale')
 const rems = require('./rems')
 
 module.exports = function sizes(state={}) {
-  const { config, query } = state
+  const { config={}, query='' } = state
   const scale = Scale(config)
   let output = /*css*/`
 /* SIZES */
