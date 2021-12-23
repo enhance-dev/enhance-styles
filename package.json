@@ -1,0 +1,33 @@
+{
+  "name": "@enhance/styles",
+  "version": "1.0.0",
+  "description": "Functional utility classes",
+  "main": "index.js",
+  "bin": {
+    "enhance": "./cli.js"
+  },
+  "style": "enhance.css",
+  "scripts": {
+    "build": "node ./cli.js > ./enhance.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enhance-dev/enhance-styles.git"
+  },
+  "keywords": [
+    "css",
+    "enhance",
+    "functional",
+    "utility",
+    "classes"
+  ],
+  "author": "@dam",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/enhance-dev/enhance-styles/issues"
+  },
+  "homepage": "https://github.com/enhance-dev/enhance-styles#readme",
+  "dependencies": {
+    "modular-scale": "^5.1.2"
+  }
+}

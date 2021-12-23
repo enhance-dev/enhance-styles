@@ -1,0 +1,32 @@
+{
+  "base": 18,
+  "scale": {
+    "ratio": "perfectFourth",
+    "steps": 10
+  },
+  "grid": {
+    "steps": 2
+  },
+  "colors": {
+  },
+  "queries": {
+    "lg": "48em"
+  },
+  "borders": {
+    "widths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ]
+  },
+  "radii": [
+    2,
+    4,
+    6,
+    15,
+    9999
+  ]
+}
