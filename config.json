@@ -1,13 +1,18 @@
 {
   "base": 18,
   "scale": {
-    "ratio": "perfectFourth",
-    "steps": 10
+    "ratio": "goldenSection",
+    "steps": 12
   },
   "grid": {
     "steps": 2
   },
   "colors": {
+    "base": "",
+    "contrast": "",
+    "active": "",
+    "hover": "",
+    "disabled": ""
   },
   "queries": {
     "lg": "48em"

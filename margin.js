@@ -6,9 +6,13 @@ module.exports = function margin (state={}) {
   var output = /*css*/`
 /* MARGIN */
 .m-none${query}{margin:0}
+.my-none${query},
 .mt-none${query}{margin-top:0}
+.mx-none${query},
 .mr-none${query}{margin-right:0}
+.my-none${query},
 .mb-none${query}{margin-bottom:0}
+.mx-none${query},
 .ml-none${query}{margin-left:0}
 .m-auto${query}{margin-right:auto;margin-left:auto;}
 .mr-auto${query}{margin-right:auto}

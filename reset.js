@@ -15,7 +15,7 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 body {
-  min-heigh: 100vh;
+  min-height: 100vh;
   line-height: 1;
   text-rendering: optimizeSpeed;
 }

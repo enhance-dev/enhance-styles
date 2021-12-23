@@ -1,7 +1,6 @@
 const rems = require('./rems')
 
-module.exports = function height(state={}) {
-  const query = state.label
+module.exports = function height(query='') {
   return /*css*/`
 /* HEIGHT */
 .h-0${query}{height:0;}

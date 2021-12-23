@@ -1,4 +1,4 @@
-module.exports = function dimensions (query) {
+module.exports = function dimensions (query='') {
   return /*css*/`
 /* DIMENSIONS */
 .w-auto${query}{width:auto;}

@@ -8,17 +8,17 @@ const grid = require('./grid')
 const zIndex = require('./z-index')
 
 module.exports = function layout(state={}) {
-  let query = state.label
+  const { label:query='' } = state
   return /*css*/`
 /* -----  LAYOUT ----- */
 
 ${position(query)}
 ${positioning(query)}
 ${display(query)}
-${width(state)}
-${height(state)}
+${width(query)}
+${height(query)}
 ${flex(query)}
 ${grid(state)}
-${zIndex(state)}
+${zIndex(query)}
 `
 }

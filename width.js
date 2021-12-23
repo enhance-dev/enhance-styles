@@ -1,7 +1,6 @@
 const rems = require('./rems')
 
-module.exports = function width(state={}) {
-  const { config={}, query='' } = state
+module.exports = function width(query='') {
   return /*css*/`
 /* WIDTH */
 .w-0${query}{width:0}

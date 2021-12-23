@@ -1,13 +1,13 @@
 module.exports = function positioning(query='') {
   return /*css*/`
  /* POSITIONING */
- .trbl,
+ .trbl${query},
 .top0${query}{top:0;}
- .trbl,
+ .trbl${query},
 .right0${query}{right:0;}
- .trbl,
+ .trbl${query},
 .bottom0${query}{bottom:0;}
- .trbl,
+ .trbl${query},
 .left0${query}{left:0;}
   `
 }

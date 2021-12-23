@@ -1,9 +1,9 @@
 const truncate = require('./truncate')
 
-module.exports = function utils() {
+module.exports = function utils(query='') {
   var output = `
 /* UTILS */
 `
-  output += truncate
+  output += truncate(query)
   return output
 }

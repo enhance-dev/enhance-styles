@@ -1,11 +1,12 @@
 module.exports = function wordbreak(query='') {
   return /*css*/`
 /* WORDBREAK */
-.break-normal${query}{word-break:normal;}
-.break-normal,
-.break-words${query}{overflow-wrap:normal;}
-.break-all${query}{word-break:break-all;}
-.truncate,
-.ellipsis${query}{text-overflow:ellipsis;}
+.break-normal${query}{word-break:normal}
+.break-normal${query},
+.break-word${query}{overflow-wrap:normal}
+.break-all${query}{word-break:break-all}
+.break-keep${query}{word-break:keep-all}
+.truncate${query},
+.ellipsis${query}{text-overflow:ellipsis}
   `
 }
