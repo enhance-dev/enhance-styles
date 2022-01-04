@@ -6,7 +6,7 @@ Functional utility classes
 enhance style scales use a base font relative naming convention that uses positive numbers when increasing the scale increment and negative numbers when decreasing the scale increment.
 
  ```css
- /* Font sizes based derived from a type scale */
+ /* Font sizes derived from a type scale */
  /* Up the scale ( positive numbers ) */
 .text5{font-size:4.209rem;}/* 75.757px */ 
 .text4{font-size:3.157rem;}/* 56.832px */ 
