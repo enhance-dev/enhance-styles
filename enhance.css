@@ -101,6 +101,12 @@ textarea {
 
 /* TYPEFACE */
 html {font-size: 18px;}
+
+/* FAMILY */
+.font-sans{font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
+.font-serif{font-family: Georgia, Cambria, "Times New Roman", Times, serif;}
+.font-mono{font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
 body {
   font-weight: normal;
   line-height: 1;
@@ -222,12 +228,6 @@ body {
 .stroke-current{stroke:currentColor;}
   
 
-
-
-/* FAMILY */
-.font-sans{font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
-.font-serif{font-family: Georgia, Cambria, "Times New Roman", Times, serif;}
-.font-mono{font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
 
 
 /* SIZES */
@@ -706,12 +706,6 @@ body {
 
 @media only screen and (min-width:48em) {
   
-
-
-/* FAMILY */
-.font-sans-lg{font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
-.font-serif-lg{font-family: Georgia, Cambria, "Times New Roman", Times, serif;}
-.font-mono-lg{font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
 
 
 /* SIZES */
