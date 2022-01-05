@@ -7,50 +7,35 @@
   "grid": {
     "steps": 2
   },
-  "colors": {
-    "primary": [
-      {
-        "label": "primary",
-        "value": "#07051E"
-      },
-      {
-        "label": "light",
-        "value": "#ffffff"
-      },
-      {
-        "label": "dark",
-        "value": "#161439"
-      },
-      {
-        "label": "accent light",
-        "value": "#E7928A"
-      },
-      {
-        "label": "accent dark",
-        "value": "#362EE8"
-      }
-    ],
-    "grayscale": [
-      {
-        "label": "#F9F9FB",
-        "value": "#F9F9FB"
-      },
-      {
-        "label": "#E5E5E5",
-        "value": "#E5E5E5"
-      }
-    ],
-    "gradient": [
-      {
-        "label": "background gradient",
-        "value": "linear-gradient(135deg, var(--p3) 20%, var(--p4) 85%)"
-      },
-      {
-        "label": "callout gradient",
-        "value": "linear-gradient(130deg, var(--p3) -35%, var(--p4) 108%)"
-      }
-    ]
-  },
+  "properties": [
+    {
+      "primary": "#07051E"
+    },
+    {
+      "light": "#ffffff"
+    },
+    {
+      "dark": "#161439"
+    },
+    {
+      "accent-light": "#E7928A"
+    },
+    {
+      "accent-dark": "#362EE8"
+    },
+    {
+      "bg-gradient": "linear-gradient(135deg, var(--accent-light) 20%, var(--accent-dark) 85%)"
+    },
+    {
+      "callout-gradient": "linear-gradient(130deg, var(--accent-light) -35%, var(--accent-dark) 108%)"
+    },
+    {
+      "grey1": "#F9F9FB"
+    },
+    {
+      "grey2": "#E5E5E5"
+    }
+  ],
   "queries": {
     "lg": "48em"
   },
