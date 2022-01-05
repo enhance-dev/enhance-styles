@@ -1,6 +1,6 @@
 const reset = require('./reset')
 const typeface = require('./typeface')
-const variables = require('./variables')
+const properties = require('./properties')
 const background = require('./background')
 const border = require('./border')
 const fill = require('./fill')
@@ -10,7 +10,7 @@ module.exports = function theme(config) {
 
   return /*css*/`
 /* ----- THEME ----- */
-${variables({config})}
+${properties({config})}
 ${reset()}
 ${typeface({config})}
 ${background({config})}
