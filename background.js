@@ -24,5 +24,13 @@ module.exports = function background(state={}) {
 .bg-cover${query}{background-size:cover;}
 .bg-contain${query}{background-size:contain;}
 .bg-unset${query}{background-color:unset;}
+.bg-clip-border${query}{background-clip:border-box;}
+.bg-clip-content${query}{background-clip:content-box;}
+.bg-clip-padding${query}{background-clip:padding-box;}
+.bg-clip-text${query}{
+  background-clip:text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 `
 }

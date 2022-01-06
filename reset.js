@@ -16,8 +16,6 @@ html:focus-within {
 }
 body {
   min-height: 100vh;
-  line-height: 1;
-  text-rendering: optimizeSpeed;
 }
 audio,
 canvas,
