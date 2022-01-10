@@ -29,8 +29,8 @@ module.exports = function background(state={}) {
 .bg-clip-padding${query}{background-clip:padding-box;}
 .bg-clip-text${query}{
   background-clip:text;
-  -webkit-background-clip: text;
-  color: transparent;
+  -webkit-background-clip:text;
+  color:transparent;
 }
 `
 }
