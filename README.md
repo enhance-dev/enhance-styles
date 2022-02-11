@@ -2,6 +2,10 @@
 Functional utility classes
 
 ## Install
+`git clone https://github.com/enhance-dev/enhance-styles.git`
+`cd enhance-styles`
+
+## Usage
 
 `npm run build`
 
