@@ -1,6 +1,20 @@
 # enhance-styles
 Functional utility classes
 
+## Install
+
+`npm run build`
+
+> Outputs default stylesheet in `enhance.css`
+
+`npm run prod`
+
+> Outputs a minified version as well `enhance.min.css`
+
+## Customize
+
+Open `config.json`, make your updates then rerun the build
+
 ## [These utility classes follow Tailwind naming conventions](https://nerdcave.com/tailwind-cheat-sheet)
 
 enhance style scales use a base font relative naming convention that uses positive numbers when increasing the scale increment and negative numbers when decreasing the scale increment.
