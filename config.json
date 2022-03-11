@@ -2,18 +2,12 @@
   "base": 18,
   "scale": {
     "ratio": "goldenSection",
-    "steps": 12
+    "steps": 8
   },
   "grid": {
-    "steps": 2
+    "steps": 6
   },
-  "colors": {
-    "base": "",
-    "contrast": "",
-    "active": "",
-    "hover": "",
-    "disabled": ""
-  },
+  "properties": [],
   "queries": {
     "lg": "48em"
   },
@@ -31,7 +25,7 @@
     2,
     4,
     6,
-    15,
+    16,
     9999
   ]
 }
