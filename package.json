@@ -2,13 +2,14 @@
   "name": "@enhance/styles",
   "version": "1.0.0",
   "description": "Functional utility classes",
-  "main": "index.js",
+  "main": "index.mjs",
+  "type": "module",
   "bin": {
-    "enhance": "./cli.js"
+    "enhance": "./cli.mjs"
   },
   "style": "enhance.css",
   "scripts": {
-    "build": "node ./cli.js > ./enhance.css",
+    "build": "node ./cli.mjs > ./enhance.css",
     "minify": "postcss ./enhance.css > ./enhance.min.css",
     "prod": "run-s build minify"
   },
