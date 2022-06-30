@@ -31,6 +31,8 @@
   },
   "homepage": "https://github.com/enhance-dev/enhance-styles#readme",
   "dependencies": {
+    "color-to-hsla": "^0.1.1",
+    "colorinterpreter": "^1.0.5",
     "modular-scale": "^5.1.2"
   },
   "devDependencies": {

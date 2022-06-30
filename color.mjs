@@ -1,8 +1,4 @@
-// textColor
-// borderColor
-// backgroundColor
-// fillColor
-export default function color() {
+export default function color(state={}) {
   return /*css*/`
 /* COLOR */
 .text-current{color:currentColor}/* current color */
