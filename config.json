@@ -1,56 +1,26 @@
 {
   "base": 18,
   "scale": {
-    "ratio": "goldenSection",
-    "steps": 8
+    "ratio": "perfectFourth",
+    "steps": 12
   },
   "fonts": {
-    "heading": "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif",
-    "body": "Georgia,Cambria,Times New Roman,Times,serif",
+    "sans": "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif",
+    "serif": "Georgia,Cambria,Times New Roman,Times,serif",
     "mono": "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
   },
-  "color": {
-    "green": [
-      "#3ee09c",
-      "#00c47c"
-    ],
-    "blue": [
-      "#2a80e0",
-      "#005dbc"
-    ],
-    "indigo": [
-      "#8753c6",
-      "#6a1dc9"
-    ],
-    "magenta": [
-      "#e21893",
-      "#c1007a"
-    ],
-    "red": [
-      "#ff6263",
-      "#ea3138"
-    ],
-    "gray": [
-      "#fbfbfb",
-      "#e5e5e5",
-      "#cfcfcf",
-      "#bababa",
-      "#a4a4a4",
-      "#4d4d4d",
-      "#383838",
-      "#222222"
-    ],
-    "yellow": [
-      "#fae05d",
-      "#e8d04d"
-    ]
+  "theme": {
+    "light": "#fff",
+    "dark": "#222",
+    "primary": "#1f74d6",
+    "secondary": "#7327ce",
+    "success": "#2cdd93",
+    "info": "#2196f3",
+    "warning": "#ffeb3b",
+    "error": "#e21893"
   },
-  "gradients": {
-    "1": "linear-gradient(125deg, #ff6263, #e21893, #8753c6, #1f74d6, #2cdd93)",
-    "2": "linear-gradient(125deg, #ff6263, #e21893)",
-    "3": "linear-gradient(125deg, #e21893, #8753c6)",
-    "4": "linear-gradient(125deg, #8753c6, #1f74d6)",
-    "5": "linear-gradient(125deg, #1f74d6, #2cdd93)"
+  "color": {
+    "crimson": "#eb0052"
   },
   "grid": {
     "steps": 6

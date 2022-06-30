@@ -4,6 +4,7 @@ import properties from './properties.mjs'
 import background from './background.mjs'
 import border from './border.mjs'
 import color from './color.mjs'
+import themeColor from './theme-color.mjs'
 import fill from './fill.mjs'
 import stroke from './stroke.mjs'
 
@@ -16,6 +17,7 @@ ${typeface({config})}
 ${background({config})}
 ${border({config})}
 ${color({config})}
+${themeColor({config})}
 ${fill({config})}
 ${stroke({config})}
 `
