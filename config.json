@@ -10,14 +10,17 @@
     "mono": "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
   },
   "theme": {
-    "light": "#fafafa",
-    "dark": "#1a1a1a",
+    "light": "#fff",
+    "dark": "#222",
     "primary": "#1f74d6",
     "secondary": "#7327ce",
     "success": "#2cdd93",
     "info": "#2196f3",
     "warning": "#ffeb3b",
     "error": "#e21893"
+  },
+  "color": {
+    "crimson": "#eb0052"
   },
   "grid": {
     "steps": 6
