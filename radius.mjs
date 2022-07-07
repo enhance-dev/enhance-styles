@@ -1,6 +1,6 @@
 export default function radius (state={}) {
   const { config={}, query=''} = state
-  const radii = config.radii
+  const { radii=[] } = config
   let output = /*css*/`
 /* RADIUS */
 .radius-none${query}{border-radius:0;}

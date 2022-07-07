@@ -2,7 +2,7 @@ import hextohsl from './hex-to-hsl.mjs'
 
 export default function themeColor({ config }) {
   const { color={}, theme={} } = config
-  theme['grey'] = theme?.grey || '#777'
+  theme['grey'] = theme && theme.grey || '#777'
 
   function colorSteps(color, name) {
     const hue = color.h

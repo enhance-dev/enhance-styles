@@ -13,10 +13,10 @@ import opacity from './opacity.mjs'
 import media from './media.mjs'
 import userSelect from './user-select.mjs'
 
-export default function cssmitten (props) {
+export default function enhanceStyles (props) {
   try {
     const config = JSON.parse(props)
-    const queries = config.queries
+    const { queries={} } = config
     let output = theme(config)
     output += styles({config})
 
