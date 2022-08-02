@@ -14,23 +14,27 @@ import media from './media.mjs'
 import userSelect from './user-select.mjs'
 
 export default function enhanceStyles (props) {
+  let config = props
+
   try {
-    const config = JSON.parse(props)
-    const { queries={} } = config
-    let output = theme(config)
-    output += styles({config})
-
-    Object.keys(queries)
-      .map(
-        function (query) {
-          output += media(queries[query], styles({config, query}))
-        }
-      )
-
-    return output
+    // weaksauce JSON check
+    config = JSON.parse(props)
   } catch(err) {
-    throw err
+    // use the default
   }
+
+  const { queries={} } = config
+  let output = theme(config)
+  output += styles({config})
+
+  Object.keys(queries)
+    .map(
+      function (query) {
+        output += media(queries[query], styles({config, query}))
+      }
+    )
+
+  return output
 }
 
 function styles (state={}) {
