@@ -87,6 +87,7 @@ Material like themes will choose a theme color name i.e. 'indigo'
 There are two special names, light and dark. These will not have a scale generated.
 - `light` is meant to be used as a light text color
 - `dark` is meant to be used as a dark text color
+
 The default theme uses a Boostrap like naming convention
 - light "#fff"
 - dark "#222"
