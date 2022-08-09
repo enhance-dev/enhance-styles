@@ -9,7 +9,7 @@ export default function family(state={}) {
 
   const out = Object.keys(fonts).length
     ? Object.keys(fonts)
-        .map(key => `.font-${key}{font-family: ${fonts[key]}};`)
+        .map(key => `.font-${key}{font-family: ${fonts[key]};}`)
         .join('\n')
     : _default
 
