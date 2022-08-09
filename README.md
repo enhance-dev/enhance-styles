@@ -76,8 +76,14 @@ The default stacks are:
 - mono "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
 
 ### theme
-`theme` is the set of theme colors. Colors must be hexidecimal. Colors can be named however you like. Colors included in the theme block will have a color scale based on lightness generate from it. It is recommended to pick a color then choose a middle lightness as the basis of the scale so as to maximize the amount of steps in the scale that are not whit or black.
-You can choose your naming convention. Bootstrap like themes will use generic names such as "primary" etc. Material like themes will choose a theme color name i.e. 'indigo'
+`theme` is the set of theme colors. 
+Colors must be hexidecimal. 
+Colors can be named however you like. 
+Colors included in the theme seting will have a color scale generated. 
+It is recommended to pick a color, then choose a middle lightness as the basis of the scale so as to maximize the amount of steps in the scale that are not white or black.
+You can choose your naming convention. 
+Bootstrap like themes will use generic names such as "primary" 
+Material like themes will choose a theme color name i.e. 'indigo'
 There are two special names, light and dark. These will not have a scale generated.
 - `light` is meant to be used as a light text color
 - `dark` is meant to be used as a dark text color
