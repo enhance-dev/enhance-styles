@@ -6,7 +6,7 @@ export default function typeface(state={}) {
   return /*css*/`
 /* TYPEFACE */
 html {font-size: ${base}px;}
-${family()}
+${family(config)}
 body {
   font-weight: normal;
   line-height: 1;
