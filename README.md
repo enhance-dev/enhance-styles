@@ -15,14 +15,13 @@ Functional utility classes
 
 > Outputs a minified version as well `enhance.min.css`
 
-## [These utility classes follow Tailwind naming conventions](https://nerdcave.com/tailwind-cheat-sheet)
-
 ## Customize
 
 Edit `config.json` and rerun to output your customized stylesheet.
 
 ### base
 `base` is the unitless base type size of the modular scale. Browsers default to 16, enhance styles defaults to 18.
+`html {font-size: 18px;}`
 
 ### scale
 `scale` consists of the modular scale settings.
@@ -47,6 +46,7 @@ enhance style scales use a base font relative naming convention that uses positi
 .text-4{font-size:0.317rem;}/* 5.701px */ 
 .text-5{font-size:0.238rem;}/* 4.277px */
 ```
+The scale is applied to `margin`, `padding` and `font-size`
 
 - `ratio` is the ratio between steps in the scale. The default is perfectFourth. It can either be set to a number of your choosing or you can use one of these included ratio names
   - minorSecond
@@ -75,6 +75,9 @@ The default stacks are:
 - serif "Georgia,Cambria,Times New Roman,Times,serif"
 - mono "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
 
+#### example
+`font-sans`
+
 ### theme
 `theme` is the set of theme colors. 
 Colors must be hexidecimal. 
@@ -100,9 +103,23 @@ The default theme uses a Boostrap like naming convention
 
 These theme scales are intended to give you enough colors for all use cases including hover, disabled, active and visited states.
 
+#### example color theme scale
+```css
+  --primary-100: hsl(212, 74.7%, 88%);
+  --primary-200: hsl(212, 74.7%, 78%);
+  --primary-300: hsl(212, 74.7%, 68%);
+  --primary-400: hsl(212, 74.7%, 58%);
+  --primary-500: hsl(212, 74.7%, 48%);
+  --primary-600: hsl(212, 74.7%, 38%);
+  --primary-700: hsl(212, 74.7%, 28%);
+  --primary-800: hsl(212, 74.7%, 18%);
+  --primary-900: hsl(212, 74.7%, 8%);
+```
+
 ### color
 `color` is for one off spot colors. Colors must be specified as hexidecimal and can be named however you like.    
-i.e. `"crimson": "#eb0052"`
+#### example color
+ `"crimson": "#eb0052"`
 
 ### grid
 `grid` contains the settings for a css grid based grid
