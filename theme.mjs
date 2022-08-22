@@ -11,13 +11,13 @@ import stroke from './stroke.mjs'
 export default function theme(config) {
   return /*css*/`
 /* ----- THEME ----- */
+${themeColor({config})}
 ${properties({config})}
 ${reset()}
 ${typeface({config})}
 ${background({config})}
 ${border({config})}
 ${color({config})}
-${themeColor({config})}
 ${fill({config})}
 ${stroke({config})}
 `

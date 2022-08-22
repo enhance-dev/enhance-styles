@@ -1,19 +1,16 @@
 export default function properties(state={}) {
   const { config } = state
-  const { properties=[] } = config
+  const { properties={} } = config
   let output = ''
-  if (properties.length) {
+  if (Object.keys(properties)) {
     output = /*css*/`
-  /* CUSTOM PROPERTIES */
-  :root {
+/* CUSTOM PROPERTIES */
+:root {
   `
-    properties.forEach(function (prop={}) {
-      let key = Object.keys(prop)[0]
-      output += `  --${key}:${prop[key]};/* ${key} */\n`
-    })
+ output +=  Object.keys(properties).map(key => `--${key}:${properties[key]};/* ${key} */`).join('\n')
 
-    output += `
-  }
+output += `
+}
   `
   }
 
