@@ -32,18 +32,18 @@ enhance style scales use a base font relative naming convention that uses positi
  ```css
  /* Font sizes derived from a type scale */
  /* Up the scale ( positive numbers ) */
-.text5{font-size:4.209rem;}/* 75.757px */ 
-.text4{font-size:3.157rem;}/* 56.832px */ 
-.text3{font-size:2.369rem;}/* 42.635px */ 
-.text2{font-size:1.777rem;}/* 31.984px */ 
-.text1{font-size:1.333rem;}/* 23.994px */ 
+.text5{font-size:4.209rem;}/* 75.757px */
+.text4{font-size:3.157rem;}/* 56.832px */
+.text3{font-size:2.369rem;}/* 42.635px */
+.text2{font-size:1.777rem;}/* 31.984px */
+.text1{font-size:1.333rem;}/* 23.994px */
 /* Base font size */
-.text0{font-size:1rem;}/* 18px */ 
+.text0{font-size:1rem;}/* 18px */
  /* Down the scale ( negative numbers ) */
-.text-1{font-size:0.75rem;}/* 13.503px */ 
-.text-2{font-size:0.563rem;}/* 10.13px */ 
-.text-3{font-size:0.422rem;}/* 7.599px */ 
-.text-4{font-size:0.317rem;}/* 5.701px */ 
+.text-1{font-size:0.75rem;}/* 13.503px */
+.text-2{font-size:0.563rem;}/* 10.13px */
+.text-3{font-size:0.422rem;}/* 7.599px */
+.text-4{font-size:0.317rem;}/* 5.701px */
 .text-5{font-size:0.238rem;}/* 4.277px */
 ```
 The scale is applied to `margin`, `padding` and `font-size`
@@ -67,9 +67,9 @@ The scale is applied to `margin`, `padding` and `font-size`
   - majorTwelfth
   - doubleOctave
 - `steps` are the number of steps in the scale to output. The default is 12.
- 
+
 ### fonts
-`fonts` are the font stacks you wish to use. They can be named however you like, but it is recommended to retain a sans-serif, a serif and a mono stack for most pages. 
+`fonts` are the font stacks you wish to use. They can be named however you like, but it is recommended to retain a sans-serif, a serif and a mono stack for most pages.
 The default stacks are:
 - sans "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
 - serif "Georgia,Cambria,Times New Roman,Times,serif"
@@ -79,13 +79,13 @@ The default stacks are:
 `font-sans`
 
 ### theme
-`theme` is the set of theme colors. 
-Colors must be hexidecimal. 
-Colors can be named however you like. 
-Colors included in the theme seting will have a color scale generated. 
+`theme` is the set of theme colors.
+Colors must be hexidecimal.
+Colors can be named however you like.
+Colors included in the theme seting will have a color scale generated.
 It is recommended to pick a color, then choose a middle lightness as the basis of the scale so as to maximize the amount of steps in the scale that are not white or black.
-You can choose your naming convention. 
-Bootstrap like themes will use generic names such as "primary" 
+You can choose your naming convention.
+Bootstrap like themes will use generic names such as "primary"
 Material like themes will choose a theme color name i.e. 'indigo'
 There are two special names, light and dark. These will not have a scale generated.
 - `light` is meant to be used as a light text color
@@ -117,7 +117,7 @@ These theme scales are intended to give you enough colors for all use cases incl
 ```
 
 ### color
-`color` is for one off spot colors. Colors must be specified as hexidecimal and can be named however you like.    
+`color` is for one off spot colors. Colors must be specified as hexidecimal and can be named however you like.
 #### example color
  `"crimson": "#eb0052"`
 
@@ -126,7 +126,7 @@ These theme scales are intended to give you enough colors for all use cases incl
 - steps are the amount of sections you want in your grid. Default is 6.
 
 ### properties
-`properties` is an array of custom properties. These can be used to supply variables for anything from drop shadows to animations. [Some inspiration](https://open-props.style/) 
+`properties` is an object of named value custom properties. These can be used to supply variables for anything from drop shadows to animations. [Some inspiration](https://open-props.style/)
 
 ### queries
 `quries` are the units for `max-width` media queries. This encourages a mobile first approach to styling. Start by making your mobile, single-column layout then resize your browser wider and only add media queries when your design requires it. Labels for the the sizes will be appended to the class names inside the media query block. i.e. `static-lg`. This allows you to add all the classes for every breakpoint and the classes will be overriden as the browser resizes. The default is `"lg": "48em"`
