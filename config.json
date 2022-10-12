@@ -24,10 +24,12 @@
     "muted": "#6c757d",
     "white": "#fff"
   },
+  "properties": {
+    "gradient": "linear-gradient(var(--primary), var(--secondary))"
+  },
   "grid": {
     "steps": 6
   },
-  "properties": [],
   "queries": {
     "lg": "48em"
   },
