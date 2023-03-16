@@ -1,3 +1,4 @@
+import docHeader from './doc-header.mjs'
 import theme from './theme.mjs'
 import typography from './typography.mjs'
 import cursor from './cursor.mjs'
@@ -17,7 +18,8 @@ export default function enhanceStyles (props) {
   try {
     const config = JSON.parse(props)
     const { queries={} } = config
-    let output = theme(config)
+    let output = docHeader()
+    output += theme(config)
     output += styles({config})
 
     Object.keys(queries)
