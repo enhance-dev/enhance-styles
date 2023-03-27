@@ -11,8 +11,6 @@ body {
   font-weight: normal;
   line-height: 1;
   text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 `
 }
