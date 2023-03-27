@@ -23,7 +23,6 @@ export default function themeColor({ config }) {
   }
   return /*css*/`
 /* ----- THEME COLORS ----- */
-:root {
 ${Object.keys(theme).map(name => {
 if (name === 'light' || name === 'dark') {
   return `  --${name}: ${theme[name]};`
@@ -34,6 +33,6 @@ else {
 }
 }).join('\n')}
 ${Object.keys(color).map(name => `  --${name}: ${color[name]};`).join('\n')}
-}`
+`
 
 }

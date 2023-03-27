@@ -2,6 +2,7 @@ export default function width(query='') {
   return /*css*/`
 /* WIDTH */
 .w-0${query}{width:0}
+.w-auto${query}{width:auto}
 .w-full${query}{width:100%}
 .w-screen${query}{width:100vw}
 .min-w-0${query}{min-width:0}

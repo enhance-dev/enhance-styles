@@ -14,9 +14,11 @@ export default function margin (state={}) {
 .mb-none${query}{margin-bottom:0}
 .mx-none${query},
 .ml-none${query}{margin-left:0}
+.mx-auto${query},
 .m-auto${query}{margin-right:auto;margin-left:auto;}
 .mr-auto${query}{margin-right:auto}
 .ml-auto${query}{margin-left:auto}
+.my-auto${query}{margin-top:auto;margin-bottom:auto;}
 `
 
   function template (label, step, side, value) {
