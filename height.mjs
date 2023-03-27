@@ -2,6 +2,7 @@ export default function height(query='') {
   return /*css*/`
 /* HEIGHT */
 .h-0${query}{height:0;}
+.h-auto${query}{height:auto}
 .h-full${query}{height:100%;}
 .h-screen${query}{height:100vh;}
 .min-h-0${query}{min-height:0;}
