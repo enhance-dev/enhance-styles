@@ -5,7 +5,7 @@
   "main": "index.mjs",
   "type": "module",
   "bin": {
-    "enhance": "./cli.mjs"
+    "enhance-styles": "./cli.mjs"
   },
   "style": "enhance.css",
   "scripts": {
