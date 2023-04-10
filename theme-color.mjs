@@ -22,7 +22,7 @@ export default function themeColor({ config }) {
     `
   }
   return /*css*/`
-/* ----- THEME COLORS ----- */
+/* THEME COLORS */
 ${Object.keys(theme).map(name => {
 if (name === 'light' || name === 'dark') {
   return `  --${name}: ${theme[name]};`

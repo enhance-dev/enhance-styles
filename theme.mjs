@@ -11,7 +11,7 @@ import stroke from './stroke.mjs'
 
 export default function theme(config) {
   return /*css*/`
-/* ----- THEME ----- */
+/* THEME */
 :root {
   ${themeColor({config})}
   ${properties({config})}
