@@ -1,5 +1,5 @@
 import position from './position.mjs'
-import positioning from './positioning.mjs'
+import inset from './inset.mjs'
 import display from './display.mjs'
 import size from './size.mjs'
 import flex from './flex.mjs'
@@ -12,7 +12,7 @@ export default function layout(state={}) {
 /* LAYOUT */
 
 ${position(query)}
-${positioning(query)}
+${inset(query)}
 ${display(query)}
 ${size(query)}
 ${flex(query)}
