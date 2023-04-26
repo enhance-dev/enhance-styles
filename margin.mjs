@@ -6,19 +6,19 @@ export default function margin (state={}) {
   let output = /*css*/`
 /* MARGIN */
 .m-none${query}{margin:0}
-.my-none${query},
-.mt-none${query}{margin-top:0}
-.mx-none${query},
-.mr-none${query}{margin-right:0}
-.my-none${query},
-.mb-none${query}{margin-bottom:0}
-.mx-none${query},
-.ml-none${query}{margin-left:0}
-.mx-auto${query},
-.m-auto${query}{margin-right:auto;margin-left:auto;}
-.mr-auto${query}{margin-right:auto}
-.ml-auto${query}{margin-left:auto}
-.my-auto${query}{margin-top:auto;margin-bottom:auto;}
+.mb-none${query}{margin-block:0}
+.mbs-none${query}{margin-block-start:0}
+.mbe-none${query}{margin-block-end:0}
+.mi-none${query}{margin-inline:0}
+.mis-none${query}{margin-inline-start:0}
+.mie-none${query}{margin-inline-end:0}
+.m-auto${query}{margin:auto}
+.mb-auto${query}{margin-block:auto}
+.mbs-auto${query}{margin-block-start:auto}
+.mbe-auto${query}{margin-block-end:auto}
+.mi-auto${query}{margin-inline:auto}
+.mis-auto${query}{margin-inline-start:auto}
+.mie-auto${query}{margin-inline-end:auto}
 `
 
   function template (label, step, side, value) {

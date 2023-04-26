@@ -13,18 +13,18 @@ export default function border(state={}) {
 .border-dotted${query}{border-style:dotted;}
 .border-double${query}{border-style:double;}
 .border-none${query}{border-style:none;}
-.border-t-none${query}{border-top:none;}
-.border-r-none${query}{border-right:none;}
-.border-b-none${query}{border-bottom:none;}
-.border-l-none${query}{border-left:none;}
+.border-bs-none${query}{border-block-start:none;}
+.border-be-none${query}{border-block-end:none;}
+.border-is-none${query}{border-inline-start:none;}
+.border-ie-none${query}{border-inline-end:none;}
 `
   widths.map((w, i) => {
     output += `
 .border${i}${query}{border-width:${w}px;}
-.border-t${i}${query}{border-top-width:${w}px;}
-.border-r${i}${query}{border-right-width:${w}px;}
-.border-b${i}${query}{border-bottom-width:${w}px;}
-.border-l${i}${query}{border-left-width:${w}px;}
+.border-bs${i}${query}{border-block-start-width:${w}px;}
+.border-be${i}${query}{border-block-end-width:${w}px;}
+.border-is${i}${query}{border-inline-start-width:${w}px;}
+.border-ie${i}${query}{border-inline-end-width:${w}px;}
 `
   })
 

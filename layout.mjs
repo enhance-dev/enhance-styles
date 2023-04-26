@@ -1,8 +1,7 @@
 import position from './position.mjs'
-import positioning from './positioning.mjs'
+import inset from './inset.mjs'
 import display from './display.mjs'
-import width from './width.mjs'
-import height from './height.mjs'
+import size from './size.mjs'
 import flex from './flex.mjs'
 import grid from './grid.mjs'
 import zIndex from './z-index.mjs'
@@ -13,10 +12,9 @@ export default function layout(state={}) {
 /* LAYOUT */
 
 ${position(query)}
-${positioning(query)}
+${inset(query)}
 ${display(query)}
-${width(query)}
-${height(query)}
+${size(query)}
 ${flex(query)}
 ${grid(state)}
 ${zIndex(query)}
