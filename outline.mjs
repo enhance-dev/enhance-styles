@@ -1,6 +1,6 @@
 export default function Outline(query) {
   return /*css*/`
-/* OUTLINE */
+/*** Outline ***/
 .outline-none${query}{outline:0;}
   `
 }

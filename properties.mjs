@@ -4,7 +4,7 @@ export default function properties(state={}) {
   let output = ''
   if (Object.keys(properties)) {
     output = /*css*/`
-/* CUSTOM PROPERTIES */
+/*** Custom Properties ***/
   `
  output +=  Object.keys(properties).map(key => `--${key}:${properties[key]};/* ${key} */`).join('\n')
 

@@ -1,6 +1,6 @@
 export default function transform(query='') {
   return /*css*/`
-/* TEXT TRANSFORM */
+/*** Text Transform ***/
 .uppercase${query}{text-transform:uppercase;}
 .lowercase${query}{text-transform:lowercase;}
 .capitalize${query}{text-transform:capitalize;}

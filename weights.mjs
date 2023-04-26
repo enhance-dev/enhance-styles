@@ -1,6 +1,6 @@
-export default function (query='') {
+export default function FontWeight (query='') {
   return /*css*/`
-/* WEIGHTS */
+/*** Font Weight ***/
 .font-hairline${query}{font-weight:100;}
 .font-thin${query}{font-weight:200;}
 .font-light${query}{font-weight:300;}

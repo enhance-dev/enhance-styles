@@ -7,7 +7,7 @@ export default function border(state={}) {
     config.borders.widths || [1])
   widths.unshift(0)
   let output = /*css*/`
-/* BORDER */
+/*** Border ***/
 .border-solid${query}{border-style:solid;}
 .border-dashed${query}{border-style:dashed;}
 .border-dotted${query}{border-style:dotted;}

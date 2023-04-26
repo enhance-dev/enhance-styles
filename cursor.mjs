@@ -1,6 +1,6 @@
 export default function Cursor(query) {
   return /*css*/`
-/* CURSOR */
+/*** Cursor ***/
 .cursor-auto${query}{cursor:auto;}
 .cursor-default${query}{cursor:default;}
 .cursor-pointer${query}{cursor:pointer;}

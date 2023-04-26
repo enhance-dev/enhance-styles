@@ -1,6 +1,6 @@
 export default function ObjectPosition(query) {
   return /*css*/`
-/* OBJECT POSITION */
+/*** Object Position ***/
 .object-b${query}{object-position:bottom;}
 .object-c${query}{object-position:center;}
 .object-t${query}{object-position:top;}

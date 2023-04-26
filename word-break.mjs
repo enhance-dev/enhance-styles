@@ -1,6 +1,6 @@
 export default function wordbreak(query='') {
   return /*css*/`
-/* WORDBREAK */
+/*** Wordbreak ***/
 .break-normal${query}{word-break:normal}
 .break-normal${query},
 .break-word${query}{overflow-wrap:normal}

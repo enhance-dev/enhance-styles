@@ -1,6 +1,6 @@
 export default function inset (query='') {
   return /*css*/`
-/* INSET */
+/*** Inset ***/
 .inset-0${query}{inset:0}
 .inset-b-0${query}{inset-block:0}
 .inset-bs-0${query}{inset-block-start:0}

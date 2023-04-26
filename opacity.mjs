@@ -1,6 +1,6 @@
 export default function Opacity(query) {
   return /*css*/`
-/* OPACITY */
+/*** Opacity ***/
 .opacity-0${query}{opacity:0;}
 .opacity-25${query}{opacity:0.25;}
 .opacity-50${query}{opacity:0.5;}

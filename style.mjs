@@ -1,6 +1,6 @@
 export default function Style(query='') {
   return /*css*/`
-/* Style */
+/*** Style ***/
 .italic${query}{font-style:italic;}
 .not-italic${query}{font-style:normal;}
 `

@@ -9,7 +9,7 @@ import zIndex from './z-index.mjs'
 export default function layout(state={}) {
   const { label:query='' } = state
   return /*css*/`
-/* LAYOUT */
+/*** Layout ***/
 
 ${position(query)}
 ${inset(query)}
