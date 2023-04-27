@@ -1,6 +1,6 @@
 export default function align(query='') {
   return /*css*/`
-/*** Align ****/
+/*** Text alignment ***/
 .text-inherit${query}{text-align:inherit;}
 .text-center${query}{text-align:center;}
 .text-start${query}{text-align:start;}
