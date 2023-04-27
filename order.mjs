@@ -1,5 +1,6 @@
 export default function order(query='') {
   return /*css*/`
+/*** Order ***/
 .order-first${query}{order:-9999;}
 .order-last${query}{order:9999;}
 .order-none${query}{order:0;}
