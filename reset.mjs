@@ -1,6 +1,6 @@
 export default function reset (query) {
   return /*css*/`
-/* RESET */
+/*** Reset ***/
 *,
 *::before,
 *::after {

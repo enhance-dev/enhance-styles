@@ -1,6 +1,6 @@
 export default function size (query='') {
   return /*css*/`
-/* SIZE */
+/*** Size ***/
 .sb-0${query}{block-size:0}
 .sb-auto${query}{block-size:auto}
 .sb-100${query}{block-size:100%}

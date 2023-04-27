@@ -2,7 +2,7 @@ export default function radius (state={}) {
   const { config={}, query=''} = state
   const { radii=[] } = config
   let output = /*css*/`
-/* RADIUS */
+/*** Radius ***/
 .radius-none${query}{border-radius:0;}
 .radius-100${query}{border-radius:100%;}
 .radius-pill${query}{border-radius:9999px;}

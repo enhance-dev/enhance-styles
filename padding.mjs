@@ -4,7 +4,7 @@ import rems from './rems.mjs'
 export default function padding(state={}) {
   const { config, label:query } = state
   let output = /*css*/`
-/* PADDING */
+/*** Padding ***/
 .p-none${query}{padding:0}
 .pb-none${query}{padding-block:0}
 .pbs-none${query}{padding-block-start:0}

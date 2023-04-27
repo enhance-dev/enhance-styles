@@ -1,6 +1,6 @@
 export default function color(state={}) {
   return /*css*/`
-/* COLOR */
+/*** Color ***/
 .text-current{color:currentColor}/* current color */
 .text-transparent{color:transparent}/* transparent */
 

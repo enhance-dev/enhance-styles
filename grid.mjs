@@ -8,7 +8,7 @@ export default function grid(state={}) {
   const gridHeights = grid.heights || []
   const query = state.label || ''
   let output = /*css*/`
-/* GRID */
+/*** Grid ***/
 .flow-row${query}{grid-auto-flow:row;}
 .flow-col${query}{grid-auto-flow:column;}
 .flow-row-dense${query}{grid-auto-flow:row dense;}

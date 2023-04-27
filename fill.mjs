@@ -1,7 +1,7 @@
 export default function fill (state={}) {
   const { query='' } = state
   return /*css*/`
-/* FILL */
+/*** Fill ***/
 .fill-none${query}{fill:none}
 .fill-current${query}{fill:currentColor}
 `

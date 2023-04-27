@@ -5,7 +5,7 @@ export default function sizes(state={}) {
   const { config={}, label:query='' } = state
   const scale = Scale(config)
   let output = /*css*/`
-/* SIZES */
+/*** Sizes ***/
 `
   const l = scale.length
   const half = Math.floor(l * 0.5)

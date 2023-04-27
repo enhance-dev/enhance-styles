@@ -4,7 +4,7 @@ import rems from './rems.mjs'
 export default function margin (state={}) {
   const { config, label:query } = state
   let output = /*css*/`
-/* MARGIN */
+/*** Margin ***/
 .m-none${query}{margin:0}
 .mb-none${query}{margin-block:0}
 .mbs-none${query}{margin-block-start:0}

@@ -1,6 +1,6 @@
 export default function flex(query='') {
   return /*css*/`
-/* FLEX */
+/*** Flex ***/
 .flex-1${query}{flex: 1 1 0%;}
 .flex-auto${query}{flex: 1 1 auto;}
 .flex-initial${query}{flex: 0 1 auto;}

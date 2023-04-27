@@ -1,6 +1,6 @@
 export default function whitespace(query='') {
   return /*css*/`
-/* WHITESPACE */
+/*** Whitespace ***/
 .whitespace-normal${query}{white-space:normal;}
 .truncate${query},
 .whitespace-no-wrap${query}{white-space:nowrap;}

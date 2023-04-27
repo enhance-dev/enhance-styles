@@ -1,6 +1,6 @@
 export default function ZIndex(query='') {
   return /*css*/`
-/* Z-INDEX */
+/*** Z-Index ***/
 .z-auto${query}{z-index:auto;}
 .z1${query}{z-index:1;}
 .z0${query}{z-index:0;}

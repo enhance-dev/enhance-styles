@@ -1,6 +1,6 @@
 export default function position(query='') {
   return /*css*/`
-/* POSITION */
+/*** Position ***/
 .sticky${query}{position:sticky;}
 .static${query}{position:static;}
 .absolute${query}{position:absolute;}

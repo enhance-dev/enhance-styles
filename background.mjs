@@ -1,7 +1,7 @@
 export default function background(state={}) {
   const { query='' } = state
   return /*css*/`
-/* BACKGROUND */
+/*** Background ***/
 .bg-fixed${query}{background-attachment:fixed;}
 .bg-local${query}{background-attachment:local;}
 .bg-scroll${query}{background-attachment:scroll;}

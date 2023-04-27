@@ -1,6 +1,6 @@
 export default function tracking(query) {
   return /*css*/`
-/* TRACKING */
+/*** Tracking ***/
 .tracking3${query}{letter-spacing: 0.1em;}
 .tracking2${query}{letter-spacing: 0.05em;}
 .tracking1${query}{letter-spacing: 0.025em;}

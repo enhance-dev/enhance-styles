@@ -1,6 +1,6 @@
 export default function lineHeight (query='') {
   return /*css*/`
-/* LINE HEIGHT */
+/*** Line Height ***/
 .leading5${query}{line-height: 2;}
 .leading4${query}{line-height: 1.625;}
 .leading3${query}{line-height: 1.5;}

@@ -1,6 +1,6 @@
 export default function display (query) {
   return /*css*/`
-/* DISPLAY */
+/*** Display ***/
 .hidden${query}{display:none;}
 .block${query}{display:block;}
 .inline${query}{display:inline;}

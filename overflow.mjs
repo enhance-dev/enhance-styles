@@ -1,6 +1,6 @@
 export default function overflow (query) {
   return /*css*/`
-/* OVERFLOW */
+/*** Overflow ***/
 .overflow-auto${query}{overflow:auto;}
 .truncate${query},
 .overflow-hidden${query}{overflow:hidden;}
