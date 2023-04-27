@@ -2,7 +2,7 @@ import sizes from './sizes.mjs'
 import style from './style.mjs'
 import lineHeight from './line-height.mjs'
 import weights from './weights.mjs'
-import align from './align.mjs'
+import textAlign from './text-align.mjs'
 import decoration from './decoration.mjs'
 import tracking from './tracking.mjs'
 import list from './list.mjs'
@@ -19,7 +19,7 @@ ${lineHeight(query)}
 ${tracking(query)}
 ${weights(query)}
 ${transform(query)}
-${align(query)}
+${textAlign(query)}
 ${decoration(query)}
 ${list(query)}
 ${whitespace(query)}

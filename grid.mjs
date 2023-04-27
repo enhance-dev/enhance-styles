@@ -36,15 +36,5 @@ export default function grid(state={}) {
     output += `.row-auto-${value}${query}{grid-auto-rows:minmax(${rems({config, value})}, auto);}\n`
   }
 
-  const scale = Scale(config)
-  const l = scale.length
-  const half = Math.floor(l * 0.5)
-  let step = half
-  for (let i=0; i<scale.length; i++) {
-    let s = step--
-    let value = scale[i]
-    output += `.gap${step}${query}{gap:${rems({config, value})};}\n`
-  }
-
   return output
 }
