@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/enhance-dev/enhance-styles#readme",
   "dependencies": {
-    "color-to-hsla": "^0.1.1",
+    "color-to-hsla": "^0.1.1"
   },
   "devDependencies": {
     "cssnano": "^5.0.14",
