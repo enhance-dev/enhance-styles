@@ -1,18 +1,22 @@
-import Scale from './scale.mjs'
-import rems from './rems.mjs'
+import { generateSpaceScaleProperties, getScalePropertyNames } from './lib/scales.mjs'
 
-export default function grid(state={}) {
-  const config = state.config || {}
-  const query = state.label || ''
-  const scale = Scale(config)
-  const l = scale.length
-  const half = Math.floor(l * 0.5)
-  let step = half
-  let output = '/*** Gap ***/\n'
-  for (let i=0; i<scale.length; i++) {
-    let s = step--
-    let value = scale[i]
-    output += `.gap${s}${query}{gap:${rems({config, value})};}\n`
+export default function gap(state={}) {
+  const { config = {}, label: query = '' } = state
+  let output = ''
+
+  if (config.spaceScale) {
+    output = `
+/*** Gap ***/
+`
+    const properties = generateSpaceScaleProperties(config.spaceScale)
+    const propertyNames = getScalePropertyNames(properties)
+
+    propertyNames.forEach(pn => {
+      const step = pn.replace('--space-', '')
+      output += `.gap${step}${query}{gap:var(${pn});}\n`
+    })
   }
+
   return output
 }
+

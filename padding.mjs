@@ -1,8 +1,7 @@
 import sided from './sided.mjs'
-import rems from './rems.mjs'
 
 export default function padding(state={}) {
-  const { config, label:query } = state
+  const { config = {}, label: query = '' } = state
   let output = /*css*/`
 /*** Padding ***/
 .p-none${query}{padding:0}
@@ -13,9 +12,9 @@ export default function padding(state={}) {
 .pis-none${query}{padding-inline-start:0}
 .pie-none${query}{padding-inline-end:0}
 `
-  function template (label, step, side, value) {
+  function template ({ label, step, side, value }) {
     side = side ? side = `-${side}` : ''
-    return `.p${label}${step}${query}{padding${side}:${rems({config, value})};}\n`
+    return `.p${label}${step}${query}{padding${side}:${value};}\n`
   }
 
   output += sided({config, template})

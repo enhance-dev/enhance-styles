@@ -1,4 +1,3 @@
-import Scale from './scale.mjs'
 import rems from './rems.mjs'
 
 export default function grid(state={}) {

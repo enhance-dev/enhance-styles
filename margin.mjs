@@ -1,8 +1,7 @@
 import sided from './sided.mjs'
-import rems from './rems.mjs'
 
 export default function margin (state={}) {
-  const { config, label:query } = state
+  const { config = {}, label:query = '' } = state
   let output = /*css*/`
 /*** Margin ***/
 .m-none${query}{margin:0}
@@ -21,9 +20,9 @@ export default function margin (state={}) {
 .mie-auto${query}{margin-inline-end:auto}
 `
 
-  function template (label, step, side, value) {
+  function template ({ label, step, side, value }) {
     side = side ? side = `-${side}` : ''
-    return `.m${label}${step}${query}{margin${side}:${rems({config, value})}}\n`
+    return `.m${label}${step}${query}{margin${side}:${value};}\n`
   }
 
   output += sided({config, template})

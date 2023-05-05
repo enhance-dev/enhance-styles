@@ -8,6 +8,8 @@ import themeColor from './theme-color.mjs'
 import fill from './fill.mjs'
 import smoothing from './smoothing.mjs'
 import stroke from './stroke.mjs'
+import typeScaleProperties from './type-scale-properties.mjs'
+import spaceScaleProperties from './space-scale-properties.mjs'
 
 export default function theme(config) {
   return /*css*/`
@@ -15,6 +17,8 @@ export default function theme(config) {
 :root {
   ${themeColor({config})}
   ${properties({config})}
+  ${typeScaleProperties({config})}
+  ${spaceScaleProperties({config})}
 }
 ${reset()}
 ${typeface({config})}

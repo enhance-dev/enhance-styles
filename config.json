@@ -4,6 +4,24 @@
     "ratio": "perfectFourth",
     "steps": 12
   },
+  "typeScale": {
+    "steps": 6,
+    "viewportMin": 320,
+    "viewportMax": 1500,
+    "baseMin": 16,
+    "baseMax": 18,
+    "scaleMin": "minor-third",
+    "scaleMax": "perfect-fourth"
+  },
+  "spaceScale": {
+    "steps": 6,
+    "viewportMin": 320,
+    "viewportMax": 1500,
+    "baseMin": 16,
+    "baseMax": 18,
+    "scaleMin": "minor-third",
+    "scaleMax": "perfect-fourth"
+  },
   "fonts": {
     "sans": "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif",
     "serif": "Georgia,Cambria,Times New Roman,Times,serif",
