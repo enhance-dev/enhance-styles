@@ -8,7 +8,7 @@ export default function typeface(state={}) {
 
   return /*css*/`
 /*** Typeface ***/
-html {font-size: 16px;}
+html {font-size: 100%;}
 ${family(config)}
 body {
   font-size: ${bodyFontSize};
