@@ -1,9 +1,4 @@
 {
-  "base": 18,
-  "scale": {
-    "ratio": "perfectFourth",
-    "steps": 12
-  },
   "typeScale": {
     "steps": 6,
     "viewportMin": 320,

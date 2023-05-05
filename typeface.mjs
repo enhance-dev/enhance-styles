@@ -2,10 +2,9 @@ import family from './family.mjs'
 
 export default function typeface(state={}) {
   const { config={} } = state
-  const { base=16 } = config
   return /*css*/`
 /*** Typeface ***/
-html {font-size: ${base}px;}
+html {font-size: 16px;}
 ${family(config)}
 body {
   font-weight: normal;
