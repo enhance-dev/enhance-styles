@@ -61,7 +61,7 @@ Edit `config.json` and rerun to output your customized stylesheet.
 
 ### `typeScale`
 
-The configuration for the fluid typographic scale (used for setting `font-size`). Affects font size classes and the respective custom properties referenced by those classes.
+The configuration for the fluid typographic scale. Affects font size classes and the respective custom properties referenced by those classes.
 
 Configuration options are:
 
@@ -75,7 +75,7 @@ Configuration options are:
 
 ### `spaceScale`
 
-The configuration for the fluid typographic scale (used for setting `font-size`). Affects margin, padding, and gap classes and the respective custom properties referenced by those classes.
+The configuration for the fluid spacing scale. Affects margin, padding, and gap classes and the respective custom properties referenced by those classes.
 
 Configuration options are:
 
@@ -157,3 +157,6 @@ These theme scales are intended to give you enough colors for all use cases incl
 ### `radii`
 `radii` is an array of border radii. The defaults are 2, 8, 16, and 9999 ( for use with pill buttons )
 
+## Prior art
+
+Much of the implementation of our fluid scales was adapted from [@georgedoescode/fluid-design-system-on-demand-builders](https://github.com/georgedoescode/fluid-design-system-on-demand-builders), which was itself adapted from [Utopia](https://utopia.fyi).
