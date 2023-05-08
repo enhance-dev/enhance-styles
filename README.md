@@ -65,7 +65,7 @@ The configuration for the fluid typographic scale. Affects font size classes and
 
 Configuration options are:
 
-- `steps`: The number of **positive steps, including the base font size**, to be used for the type scale. Two negative steps will be added for setting type at sub-body sizes. (We do not currently generate additional negative steps as this often results in type that is far too small to read.)
+- `steps`: The number of steps, including the base font size, to be used for the type scale. **Two negative steps will be generated** for setting type at sub-body sizes. (We do not currently generate additional negative steps as this often results in type that is far too small to read.)
 - `viewportMin`: The minimum viewport width, in pixels. Font sizes will not decrease at viewports narrower than this width.
 - `viewportMax`: The maximum viewport width, in pixels. Font sizes will not increase at viewports wider than this width.
 - `baseMin`: The base font size, in pixels, to be used at the minimum viewport width.
