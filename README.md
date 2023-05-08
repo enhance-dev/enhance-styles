@@ -34,7 +34,7 @@ Enhance Styles uses fluid units in its utility classes for font sizes, margins, 
 The key concepts to be aware of are:
 
 - **Steps**: Type and space scales contain a configurable number of steps. This number should be large enough to provide the designer and developer with a sufficient range of options for setting type size and negative space, but not so large that an excessive number of unused steps are generated (as this will bloat the CSS bundle and cause confusion for implementers).
-- **Viewport widths**: Type and space scale values will be interpolated between a declared minimum and maximum viewport width. Beyond these boundary sizes, the scale values will remain at their respective minimum and maximum sizes.
+- **Viewport widths**: Type and space scale values will only be fluidly interpolated between a declared minimum and maximum viewport width. Beyond these boundary sizes, the scale values will remain at their respective minimum and maximum sizes.
 - **Base size**: The base (or starting) value to use for the scale. Each step on the scale will get larger than this size (or smaller, for negative steps) by an amount dictated by the current viewport width and the minimum and maximum scale factors.
 - **Scale factors**: The ratio at which each value in the scale grows (or shrinks) from the previous step. Larger ratios produce larger differences between each step. At the minimum viewport width, the minimum scaling factor will be used; at the maximum viewport width, the maximum scaling factor will be used. Between the minimum and maximum viewports, the scale factor will be interpolated between its minimum and maximum values, based on the viewport width.
 
