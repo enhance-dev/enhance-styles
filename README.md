@@ -65,13 +65,13 @@ The configuration for the fluid typographic scale. Affects font size classes and
 
 Configuration options are:
 
-- `steps`: The number of steps, including the base font size, to be used for the type scale. **Two negative steps will be generated** for setting type at sub-body sizes. (We do not currently generate additional negative steps as this often results in type that is far too small to read.)
-- `viewportMin`: The minimum viewport width, in pixels. Font sizes will not decrease at viewports narrower than this width.
-- `viewportMax`: The maximum viewport width, in pixels. Font sizes will not increase at viewports wider than this width.
-- `baseMin`: The base font size, in pixels, to be used at the minimum viewport width.
-- `baseMax`: The base font size, in pixels, to be used at the maximum viewport width.
-- `scaleMin`: The minimum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base font size, at the minimum viewport width.
-- `scaleMax`: The maximum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base font size, at the maximum viewport width.
+- **`steps`** (default: `6`): The number of steps, including the base font size, to be used for the type scale. **Two negative steps will be generated** for setting type at sub-body sizes. (We do not currently generate additional negative steps as this often results in type that is far too small to read.)
+- **`viewportMin`** (default: `320`): The minimum viewport width, in pixels. Font sizes will not decrease at viewports narrower than this width.
+- **`viewportMax`** (default: `1500`): The maximum viewport width, in pixels. Font sizes will not increase at viewports wider than this width.
+- **`baseMin`** (default: `16`): The base font size, in pixels, to be used at the minimum viewport width.
+- **`baseMax`** (default: `18`): The base font size, in pixels, to be used at the maximum viewport width.
+- **`scaleMin`** (default: `"minor-third"`): The minimum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base font size, at the minimum viewport width.
+- **`scaleMax`** (default: `"perfect-fourth"`): The maximum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base font size, at the maximum viewport width.
 
 ### `spaceScale`
 
@@ -79,13 +79,13 @@ The configuration for the fluid spacing scale. Affects margin, padding, and gap 
 
 Configuration options are:
 
-- `steps`: The number of steps, including the base step, to be used for the space scale. **A symmetric number of positive and negative steps will be generated** (for example, 6 steps would generate 1 base step, 5 positive steps, and 5 negative steps).
-- `viewportMin`: The minimum viewport width, in pixels. Spacing sizes will not decrease at viewports narrower than this width.
-- `viewportMax`: The maximum viewport width, in pixels. Spacing sizes will not increase at viewports wider than this width.
-- `baseMin`: The base spacing size, in pixels, to be used at the minimum viewport width.
-- `baseMax`: The base spacing size, in pixels, to be used at the maximum viewport width.
-- `scaleMin`: The minimum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base size, at the minimum viewport width.
-- `scaleMax`: The maximum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base size, at the maximum viewport width.
+- **`steps`** (default: `6`): The number of steps, including the base step, to be used for the space scale. **A symmetric number of positive and negative steps will be generated** (for example, 6 steps would generate 1 base step, 5 positive steps, and 5 negative steps).
+- **`viewportMin`** (default: `320`): The minimum viewport width, in pixels. Spacing sizes will not decrease at viewports narrower than this width.
+- **`viewportMax`** (default: `1500`): The maximum viewport width, in pixels. Spacing sizes will not increase at viewports wider than this width.
+- **`baseMin`** (default: `16`): The base spacing size, in pixels, to be used at the minimum viewport width.
+- **`baseMax`** (default: `18`): The base spacing size, in pixels, to be used at the maximum viewport width.
+- **`scaleMin`** (default: `"minor-third"`): The minimum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base size, at the minimum viewport width.
+- **`scaleMax`** (default: `"perfect-fourth"`): The maximum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base size, at the maximum viewport width.
 
 ### `fonts`
 `fonts` are the font stacks you wish to use. They can be named however you like, but it is recommended to retain a sans-serif, a serif and a mono stack for most pages.
