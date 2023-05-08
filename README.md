@@ -21,24 +21,24 @@ A couple aspects of Enhance Styles may be different from other CSS methodologies
 
 ### Logical properties
 
-[CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) are logical alternatives to layout based properties and values that were previously expressed imperatively (or 'physically') in CSS. For example, the block and inline directions provide a logical alternative to the top/bottom left/right directions, in order to account for different writing modes.
+[CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) are logical alternatives to layout based properties and values that were previously expressed imperatively (or 'physically') in CSS. For example, the block and inline directions provide a logical alternative to the top/bottom and left/right directions, in order to account for different writing modes.
 
 Enhance Styles uses logical properties in its utility classes for margins, padding, borders, insets, width, height, and text alignment.
 
 ### Fluid type and layout
 
-Fluid type size and layout spacing allows fonts, margins, padding, and aspects of layouts to scale in size gradually across a fluid range of viewport sizes, as opposed to changing suddenly at discrete breakpoints. This approach has notably been popularized by tools like [Utopia](https://utopia.fyi/). Using fluid type and spacing can reduce the amount of CSS you need to write, and especially reduces the amount of changes needing to be made at arbitrary viewport sizes. Of course, this strategy requires alignment between designers and developers; [the Utopia blog](https://utopia.fyi/blog) has some great reading on this subject.
+Fluid type size and spacing allows fonts, margins, padding, and other aspects of layouts to scale in size gradually across a fluid range of viewport sizes, as opposed to changing suddenly at discrete breakpoints via media queries. This approach has been popularized by tools like [Utopia](https://utopia.fyi/). Using fluid type and spacing can reduce the amount of CSS you need to write. It especially reduces the amount of adjustments needing to be made at arbitrary viewport sizes. Of course, this strategy requires alignment between designers and developers; [the Utopia blog](https://utopia.fyi/blog) has some great reading on this subject.
 
 Enhance Styles uses fluid units in its utility classes for font sizes, margins, padding, and gaps (for use in flexbox and grid layouts). We also emit custom properties for each step of the type and space scales.
 
 The key concepts to be aware of are:
 
-- **Steps**: Type and layout scales contain a configurable number of steps. This number should be large enough to provide the designer and developer with a sufficient range of options for setting type size and negative space, but not so large that an excessive number of unused steps are generated (as this will bloat the CSS bundle and cause confusion for implementers).
-- **Viewport widths**: Type and space scale values will be interpolated between a declared minimum and maximum viewport width. Below the minimum and above the maximum viewport size, the scale values will remain at their respective minimum and maximum sizes.
-- **Base size**: The base value to use for the scale; each step on the scale will get larger (or smaller, for negative steps) than this size by an amount dictated by the current viewport width and the minimum and maximum scale factors.
+- **Steps**: Type and space scales contain a configurable number of steps. This number should be large enough to provide the designer and developer with a sufficient range of options for setting type size and negative space, but not so large that an excessive number of unused steps are generated (as this will bloat the CSS bundle and cause confusion for implementers).
+- **Viewport widths**: Type and space scale values will be interpolated between a declared minimum and maximum viewport width. Beyond these boundary sizes, the scale values will remain at their respective minimum and maximum sizes.
+- **Base size**: The base (or starting) value to use for the scale. Each step on the scale will get larger than this size (or smaller, for negative steps) by an amount dictated by the current viewport width and the minimum and maximum scale factors.
 - **Scale factors**: The ratio at which each value in the scale grows (or shrinks) from the previous step. Larger ratios produce larger differences between each step. At the minimum viewport width, the minimum scaling factor will be used; at the maximum viewport width, the maximum scaling factor will be used. Between the minimum and maximum viewports, the scale factor will be interpolated between its minimum and maximum values, based on the viewport width.
 
-For Enhance Styles' configuration, the scale factors can be set using any [rational number](https://www.mathsisfun.com/rational-numbers.html). For convenience, the following named ratios may be also be used:
+For Enhance Styles' configuration, the scale factors can be set using any [rational number](https://www.mathsisfun.com/rational-numbers.html). For convenience, the following [named ratios](https://24ways.org/2011/composing-the-new-canon) may be also be used:
 
 | Named ratio | As a rational number |
 |-|-|
@@ -79,7 +79,7 @@ The configuration for the fluid typographic scale (used for setting `font-size`)
 
 Configuration options are:
 
-- `steps`: The number of **steps, including the base step**, to be used for the space scale. A symmetric number of positive and negative steps will be generated (for example, `6` steps would generate 1 base step, 5 positive steps, and 5 negative steps).
+- `steps`: The number of steps, including the base step, to be used for the space scale. **A symmetric number of positive and negative steps will be generated** (for example, 6 steps would generate 1 base step, 5 positive steps, and 5 negative steps).
 - `viewportMin`: The minimum viewport width, in pixels. Spacing sizes will not decrease at viewports narrower than this width.
 - `viewportMax`: The maximum viewport width, in pixels. Spacing sizes will not increase at viewports wider than this width.
 - `baseMin`: The base spacing size, in pixels, to be used at the minimum viewport width.
