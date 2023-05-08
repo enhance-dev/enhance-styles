@@ -25,7 +25,7 @@ A couple aspects of Enhance Styles may be different from other CSS methodologies
 
 Enhance Styles uses logical properties in its utility classes for margins, padding, borders, insets, width, height, and text alignment.
 
-### Fluid type and layout
+### Fluid type and spacing
 
 Fluid type size and spacing allows fonts, margins, padding, and other aspects of layouts to scale in size gradually across a fluid range of viewport sizes, as opposed to changing suddenly at discrete breakpoints via media queries. This approach has been popularized by tools like [Utopia](https://utopia.fyi/). Using fluid type and spacing can reduce the amount of CSS you need to write. It especially reduces the amount of adjustments needing to be made at arbitrary viewport sizes. Of course, this strategy requires alignment between designers and developers; [the Utopia blog](https://utopia.fyi/blog) has some great reading on this subject.
 
