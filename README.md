@@ -15,70 +15,91 @@ Functional utility classes
 
 > Outputs a minified version as well `enhance.min.css`
 
+## Notable concepts
+
+A couple aspects of Enhance Styles may be different from other CSS methodologies or frameworks you’ve used before. These are described briefly below; for more in depth documentation, refer to [the Enhance Styles docs](https://enhance.dev/docs/learn/concepts/styling/).
+
+### Logical properties
+
+[CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) are logical alternatives to layout based properties and values that were previously expressed imperatively (or 'physically') in CSS. For example, the block and inline directions provide a logical alternative to the top/bottom and left/right directions, in order to account for different writing modes.
+
+Enhance Styles uses logical properties in its utility classes for margins, padding, borders, insets, width, height, and text alignment.
+
+### Fluid type and spacing
+
+Fluid type size and spacing allows fonts, margins, padding, and other aspects of layouts to scale in size gradually across a fluid range of viewport sizes, as opposed to changing suddenly at discrete breakpoints via media queries. This approach has been popularized by tools like [Utopia](https://utopia.fyi/). Using fluid type and spacing can reduce the amount of CSS you need to write. It especially reduces the amount of adjustments needing to be made at arbitrary viewport sizes. Of course, this strategy requires alignment between designers and developers; [the Utopia blog](https://utopia.fyi/blog) has some great reading on this subject.
+
+Enhance Styles uses fluid units in its utility classes for font sizes, margins, padding, and gaps (for use in flexbox and grid layouts). We also emit custom properties for each step of the type and space scales.
+
+The key concepts to be aware of are:
+
+- **Steps**: Type and space scales contain a configurable number of steps. This number should be large enough to provide the designer and developer with a sufficient range of options for setting type size and negative space, but not so large that an excessive number of unused steps are generated (as this will bloat the CSS bundle and cause confusion for implementers).
+- **Viewport widths**: Type and space scale values will only be fluidly interpolated between a declared minimum and maximum viewport width. Beyond these boundary sizes, the scale values will remain at their respective minimum and maximum sizes.
+- **Base size**: The base (or starting) value to use for the scale. Each step on the scale will get larger than this size (or smaller, for negative steps) by an amount dictated by the current viewport width and the minimum and maximum scale factors.
+- **Scale factors**: The ratio at which each value in the scale grows (or shrinks) from the previous step. Larger ratios produce larger differences between each step. At the minimum viewport width, the minimum scaling factor will be used; at the maximum viewport width, the maximum scaling factor will be used. Between the minimum and maximum viewports, the scale factor will be interpolated between its minimum and maximum values, based on the viewport width.
+
+For Enhance Styles' configuration, the scale factors can be set using any [rational number](https://www.mathsisfun.com/rational-numbers.html). For convenience, the following [named ratios](https://24ways.org/2011/composing-the-new-canon) may be also be used:
+
+| Named ratio | As a rational number |
+|-|-|
+| `minor-second`| 1.067 |
+| `major-second`| 1.125 |
+| `minor-third`| 1.2 |
+| `major-third`| 1.25 |
+| `perfect-fourth`| 1.333 |
+| `augmented-fourth`| 1.414 |
+| `perfect-fifth`| 1.5 |
+| `golden-ratio`| 1.618 |
+| `major-sixth`| 1.667 |
+| `minor-seventh`| 1.778 |
+| `major-seventh`| 1.875 |
+| `octave`| 2 |
+
 ## Customize
 
 Edit `config.json` and rerun to output your customized stylesheet.
 
-### base
-`base` is the unitless base type size of the modular scale. Browsers default to 16, enhance styles defaults to 18.
-`html {font-size: 18px;}`
+### `typeScale`
 
-### scale
-`scale` consists of the modular scale settings.
+The configuration for the fluid typographic scale. Affects font size classes and the respective custom properties referenced by those classes.
 
-enhance styles uses a [modular scale](https://www.modularscale.com/) to generate vizual harmony within the spacing, sizing and padding.
-enhance style scales use a base font relative naming convention that uses positive numbers when increasing the scale increment and negative numbers when decreasing the scale increment.
+**Note: Enhance Styles will automatically assign the generated base step in this scale (`var(--text0)`) to the `body` font size.**
 
- ```css
- /* Font sizes derived from a type scale */
- /* Up the scale ( positive numbers ) */
-.text5{font-size:4.209rem;}/* 75.757px */
-.text4{font-size:3.157rem;}/* 56.832px */
-.text3{font-size:2.369rem;}/* 42.635px */
-.text2{font-size:1.777rem;}/* 31.984px */
-.text1{font-size:1.333rem;}/* 23.994px */
-/* Base font size */
-.text0{font-size:1rem;}/* 18px */
- /* Down the scale ( negative numbers ) */
-.text-1{font-size:0.75rem;}/* 13.503px */
-.text-2{font-size:0.563rem;}/* 10.13px */
-.text-3{font-size:0.422rem;}/* 7.599px */
-.text-4{font-size:0.317rem;}/* 5.701px */
-.text-5{font-size:0.238rem;}/* 4.277px */
-```
-The scale is applied to `margin`, `padding` and `font-size`
+Configuration options are:
 
-- `ratio` is the ratio between steps in the scale. The default is perfectFourth. It can either be set to a number of your choosing or you can use one of these included ratio names
-  - minorSecond
-  - majorSecond
-  - minorThird
-  - majorThird
-  - perfectFourth
-  - augFourth
-  - perfectFifth
-  - minorSixth
-  - goldenSection
-  - majorSixth
-  - minorSeventh
-  - majorSeventh
-  - octave
-  - majorTenth
-  - majorEleventh
-  - majorTwelfth
-  - doubleOctave
-- `steps` are the number of steps in the scale to output. The default is 12.
+- **`steps`** (default: `6`): The number of steps, including the base font size, to be used for the type scale. **Two negative steps will be generated** for setting type at sub-body sizes. (We do not currently generate additional negative steps as this often results in type that is far too small to read.)
+- **`viewportMin`** (default: `320`): The minimum viewport width, in pixels. Font sizes will not decrease at viewports narrower than this width.
+- **`viewportMax`** (default: `1500`): The maximum viewport width, in pixels. Font sizes will not increase at viewports wider than this width.
+- **`baseMin`** (default: `16`): The base font size, in pixels, to be used at the minimum viewport width.
+- **`baseMax`** (default: `18`): The base font size, in pixels, to be used at the maximum viewport width.
+- **`scaleMin`** (default: `"minor-third"`): The minimum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base font size, at the minimum viewport width.
+- **`scaleMax`** (default: `"perfect-fourth"`): The maximum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base font size, at the maximum viewport width.
 
-### fonts
+### `spaceScale`
+
+The configuration for the fluid spacing scale. Affects margin, padding, and gap classes and the respective custom properties referenced by those classes.
+
+Configuration options are:
+
+- **`steps`** (default: `6`): The number of steps, including the base step, to be used for the space scale. **A symmetric number of positive and negative steps will be generated** (for example, 6 steps would generate 1 base step, 5 positive steps, and 5 negative steps).
+- **`viewportMin`** (default: `320`): The minimum viewport width, in pixels. Spacing sizes will not decrease at viewports narrower than this width.
+- **`viewportMax`** (default: `1500`): The maximum viewport width, in pixels. Spacing sizes will not increase at viewports wider than this width.
+- **`baseMin`** (default: `16`): The base spacing size, in pixels, to be used at the minimum viewport width.
+- **`baseMax`** (default: `18`): The base spacing size, in pixels, to be used at the maximum viewport width.
+- **`scaleMin`** (default: `"minor-third"`): The minimum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base size, at the minimum viewport width.
+- **`scaleMax`** (default: `"perfect-fourth"`): The maximum scaling factor, either as a rational number or a named ratio, to be used for computing all steps above and below the base size, at the maximum viewport width.
+
+### `fonts`
 `fonts` are the font stacks you wish to use. They can be named however you like, but it is recommended to retain a sans-serif, a serif and a mono stack for most pages.
 The default stacks are:
 - sans "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
 - serif "Georgia,Cambria,Times New Roman,Times,serif"
 - mono "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
 
-#### example
+#### Example
 `font-sans`
 
-### theme
+### `theme`
 `theme` is the set of theme colors.
 Colors must be hexidecimal.
 Colors can be named however you like.
@@ -116,25 +137,28 @@ These theme scales are intended to give you enough colors for all use cases incl
   --primary-900: hsl(212, 74.7%, 8%);
 ```
 
-### color
+### `color`
 `color` is for one off spot colors. Colors must be specified as hexidecimal and can be named however you like.
 #### example color
  `"crimson": "#eb0052"`
 
-### grid
+### `grid`
 `grid` contains the settings for a css grid based grid
 - steps are the amount of sections you want in your grid. Default is 6.
 
-### properties
+### `properties`
 `properties` is an object of named value custom properties. These can be used to supply variables for anything from drop shadows to animations. [Some inspiration](https://open-props.style/)
 
-### queries
+### `queries`
 `queries` are the units for `min-width` media queries. This encourages a mobile first approach to styling. Start by making your mobile, single-column layout then resize your browser wider and only add media queries when your design requires it. Labels for the the sizes will be appended to the class names inside the media query block. i.e. `static-lg`. This allows you to add all the classes for every breakpoint and the classes will be overriden as the browser resizes. The default is `"lg": "48em"`
 
-### borders
+### `borders`
 `borders` are settings for borders.
 - `widths` is an array of border widths. The defaults are 1, 2, and 4
 
-### radii
+### `radii`
 `radii` is an array of border radii. The defaults are 2, 8, 16, and 9999 ( for use with pill buttons )
 
+## Prior art
+
+Much of the implementation of our fluid scales was adapted from [@georgedoescode/fluid-design-system-on-demand-builders](https://github.com/georgedoescode/fluid-design-system-on-demand-builders), which was itself adapted from [Utopia](https://utopia.fyi).

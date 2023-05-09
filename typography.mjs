@@ -1,4 +1,4 @@
-import sizes from './sizes.mjs'
+import fontSize from './font-size.mjs'
 import style from './style.mjs'
 import lineHeight from './line-height.mjs'
 import weights from './weights.mjs'
@@ -13,7 +13,7 @@ import transform from './transform.mjs'
 export default function typography(state={}) {
   const { label:query='' } = state
   return `
-${sizes(state)}
+${fontSize(state)}
 ${style(query)}
 ${lineHeight(query)}
 ${tracking(query)}
