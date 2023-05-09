@@ -1,6 +1,6 @@
 {
   "name": "@enhance/styles",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Functional utility classes",
   "main": "index.mjs",
   "type": "module",
