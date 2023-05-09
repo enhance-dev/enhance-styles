@@ -63,6 +63,8 @@ Edit `config.json` and rerun to output your customized stylesheet.
 
 The configuration for the fluid typographic scale. Affects font size classes and the respective custom properties referenced by those classes.
 
+**Note: Enhance Styles will automatically assign the generated base step in this scale (`var(--text0)`) to the `body` font size.**
+
 Configuration options are:
 
 - **`steps`** (default: `6`): The number of steps, including the base font size, to be used for the type scale. **Two negative steps will be generated** for setting type at sub-body sizes. (We do not currently generate additional negative steps as this often results in type that is far too small to read.)
