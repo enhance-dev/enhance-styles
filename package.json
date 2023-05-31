@@ -12,7 +12,7 @@
     "build": "node ./cli.mjs > ./enhance.css",
     "minify": "postcss ./enhance.css > ./enhance.min.css",
     "prod": "run-s build minify",
-    "test": "tape ./test/**/**.test.js | tap-arc"
+    "test": "tape './test/**/**.test.js' | tap-arc"
   },
   "repository": {
     "type": "git",

@@ -2,15 +2,16 @@ import { generateTypeScaleProperties, getScalePropertyNames } from './lib/scales
 
 export default function fontSize(state = {}) {
   const { config = {}, label: query = ''} = state
+  const { typeScale } = config
 
   let output = ''
   
-  if (config.typeScale) {
+  if (typeScale) {
     output = /*css*/`
 /*** Font Sizes ***/
 `
 
-    const properties = generateTypeScaleProperties(config)
+    const properties = generateTypeScaleProperties(typeScale)
     const propertyNames = getScalePropertyNames(properties)
 
     propertyNames.forEach(pn => {
