@@ -5,10 +5,12 @@ export default function properties(state={}) {
   if (Object.keys(properties)) {
     output = /*css*/`
 /*** Custom Properties ***/
+:root {
   `
  output +=  Object.keys(properties).map(key => `--${key}:${properties[key]};/* ${key} */`).join('\n')
 
 output += `
+}
   `
   }
 

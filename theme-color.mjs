@@ -21,8 +21,10 @@ export default function themeColor({ config }) {
   --${name}-900: hsl(${hue}, ${saturation}%, ${Math.floor(luminance - 40)}%);
     `
   }
+
   return /*css*/`
 /*** Theme Colors ***/
+:root {
 ${Object.keys(theme).map(name => {
 if (name === 'light' || name === 'dark') {
   return `  --${name}: ${theme[name]};`
@@ -33,6 +35,7 @@ else {
 }
 }).join('\n')}
 ${Object.keys(color).map(name => `  --${name}: ${color[name]};`).join('\n')}
+}
 `
 
 }

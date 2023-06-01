@@ -13,13 +13,10 @@ import spaceScaleProperties from './space-scale-properties.mjs'
 
 export default function theme(config) {
   return /*css*/`
-/*** Theme ***/
-:root {
-  ${themeColor({config})}
-  ${properties({config})}
-  ${typeScaleProperties({config})}
-  ${spaceScaleProperties({config})}
-}
+${themeColor({config})}
+${properties({config})}
+${typeScaleProperties({config})}
+${spaceScaleProperties({config})}
 ${reset()}
 ${typeface({config})}
 ${smoothing({config})}
