@@ -12,7 +12,6 @@ export default function size (query='') {
 .sb-max-100${query}{max-block-size:100%}
 .sb-100vw${query}{block-size:100vw}
 .sb-100vh${query}{block-size:100vh}
-
 .si-0${query}{inline-size:0}
 .si-auto${query}{inline-size:auto}
 .si-100${query}{inline-size:100%}
