@@ -13,6 +13,7 @@ import outline from './outline.mjs'
 import opacity from './opacity.mjs'
 import media from './media.mjs'
 import userSelect from './user-select.mjs'
+import debug from './debug.mjs'
 
 export default function enhanceStyles (props) {
   try {
@@ -53,5 +54,6 @@ ${outline(label)}
 ${opacity(label)}
 ${cursor(label)}
 ${userSelect(label)}
+${debug()}
 `
 }
