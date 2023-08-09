@@ -75,6 +75,9 @@ textarea {
   vertical-align: top;
   overflow: auto;
 }
+dialog {
+  margin: auto;
+}
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
    scroll-behavior: auto;
