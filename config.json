@@ -25,20 +25,11 @@
   "theme": {
     "light": "#f8f9fa",
     "dark": "#343a40",
-    "primary": "#007bff",
-    "secondary": "#6c757d",
-    "success": "#28a745",
-    "info": "#17a2b8",
-    "warning": "#ffc107",
-    "error": "#dc3545"
+    "accent": "#00f07f"
   },
   "color": {
-    "crimson": "#eb0052",
-    "muted": "#6c757d",
-    "white": "#fff"
   },
   "properties": {
-    "gradient": "linear-gradient(var(--primary), var(--secondary))"
   },
   "grid": {
     "steps": 6
