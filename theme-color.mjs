@@ -6,10 +6,10 @@ export default function themeColor({ config }) {
   const defaultDark = '#343a40'
   const lightParts = hextohsl(theme['light'] || defaultLight);
   const darkParts = hextohsl(theme['dark'] || defaultDark)
-  const accentColor = theme['accent'] || '#663399'
-  const accentContrastColor = theme['accent-contrast'] || defaultDark
-  theme['accent'] = theme['accent'] || accentColor
-  theme['accent-contrast'] = theme['accent-contrast'] || accentContrastColor
+  const defaultAccent = '#663399'
+  const defaultAccentContrast = defaultDark
+  theme['accent'] = theme['accent'] || defaultAccent
+  theme['accent-contrast'] = theme['accent-contrast'] || defaultAccentContrast
 
 
   function colorSteps(color, name) {
