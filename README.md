@@ -103,26 +103,35 @@ The default stacks are:
 `theme` is the set of theme colors.
 Colors must be hexidecimal.
 Colors can be named however you like.
-Colors included in the theme seting will have a color scale generated.
+Colors included in the theme setting will have a color scale generated.
 It is recommended to pick a color, then choose a middle lightness as the basis of the scale so as to maximize the amount of steps in the scale that are not white or black.
 You can choose your naming convention.
 Bootstrap like themes will use generic names such as "primary"
 Material like themes will choose a theme color name i.e. 'indigo'
-There are two special names, light and dark. These will not have a scale generated.
+There are special names, light and dark, accent and accent-contrast. These will not have a scale generated and will be used as the basis for the default theme. The default theme will adjust to user set dark and light modes.
 - `light` is meant to be used as a light text color
 - `dark` is meant to be used as a dark text color
+- `accent` will be set as the [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color) for the document and will be reflected in input and focus styling.
+- `accent-contrast` will be used as the text color used with accented backgrounds. This color should meet accessibility guidelines for contrast.
 
-The default theme uses a Boostrap like naming convention
-- light "#fff"
-- dark "#222"
-- primary "#1f74d6"
-- secondary "#7327ce"
-- success "#2cdd93"
-- info "#2196f3"
-- warning "#ffeb3b"
-- error "#e21893"
+## UPGRADE GUIDE
+If you want to restore the default Boostrap theme colors the copy and paste the code below into your `config.json`
+```json
+"theme": {
+  "accent": "#007AFF",
+  "accent-cotrast": "#fff",
+  "light": "#f8f9fa",
+  "dark": "#343a40",
+  "primary": "#007bff",
+  "secondary": "#6c757d",
+  "success": "#28a745",
+  "info": "#17a2b8",
+  "warning": "#ffc107",
+  "error": "#dc3545"
+}
+```
 
-These theme scales are intended to give you enough colors for all use cases including hover, disabled, active and visited states.
+Theme scales are intended to give you enough colors for all use cases including hover, disabled, active and visited states.
 
 #### example color theme scale
 ```css
