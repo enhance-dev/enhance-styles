@@ -14,9 +14,6 @@ export default function reset (query) {
 html:focus-within {
   scroll-behavior: smooth;
 }
-body {
-  min-height: 100vh;
-}
 audio,
 canvas,
 embed,
