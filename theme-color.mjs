@@ -49,9 +49,8 @@ ${Object.keys(color).map(name => `  --${name}: ${color[name]};`).join('\n')}
   --back: var(--light, ${defaultLight});
   --fore: var(--dark, ${defaultDark});
   ${colorSteps({ h: lightParts.h, s: 0, l: 50}, 'grey')}
-  --border-width: 1px;
   --focus-size: 1px;
-  --focus-offset: 2px;
+  --focus-offset: 1px;
   accent-color: var(--accent);
   color-scheme: light dark;
 }
@@ -62,9 +61,17 @@ ${Object.keys(color).map(name => `  --${name}: ${color[name]};`).join('\n')}
 
 :is(a, button, input, textarea, summary):focus-visible {
   outline: max(var(--focus-size), 1px) solid var(--accent);
-  outline-offset: var(--border-width);
-  box-shadow: 0 0 0 1px black,
-    0 0 0 3px white;
+  outline-offset: var(--focus-offset);
+}
+
+:is(a, button, input, textarea, summary):not(:focus):not(:placeholder-shown):invalid {
+  outline: max(var(--focus-size), 1px) solid var(--error);
+  outline-offset: var(--focus-offset);
+}
+
+:is(a, button, input, textarea, summary):not(:focus):not(:placeholder-shown):invalid {
+  outline: max(var(--focus-size), 1px) solid var(--error);
+  outline-offset: var(--focus-offset);
 }
 
 @media (prefers-color-scheme: dark) {
