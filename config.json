@@ -25,20 +25,15 @@
   "theme": {
     "light": "#f8f9fa",
     "dark": "#343a40",
-    "primary": "#007bff",
-    "secondary": "#6c757d",
-    "success": "#28a745",
-    "info": "#17a2b8",
-    "warning": "#ffc107",
-    "error": "#dc3545"
+    "accent": "#007aff",
+    "primary": "#007aff"
   },
   "color": {
-    "crimson": "#eb0052",
-    "muted": "#6c757d",
-    "white": "#fff"
+    "error": "#ff3b2f",
+    "warn": "#ffcc02",
+    "success": "#35c759"
   },
   "properties": {
-    "gradient": "linear-gradient(var(--primary), var(--secondary))"
   },
   "grid": {
     "steps": 6
