@@ -25,7 +25,8 @@
   "theme": {
     "light": "#f8f9fa",
     "dark": "#343a40",
-    "accent": "#007aff"
+    "accent": "#007aff",
+    "primary": "#007aff"
   },
   "color": {
     "error": "#ff3b2f",

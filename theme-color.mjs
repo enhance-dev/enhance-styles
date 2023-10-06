@@ -5,8 +5,7 @@ export default function themeColor({ config }) {
   const defaultLight = '#f8f9fa'
   const defaultDark = '#343a40'
   const lightParts = hextohsl(theme['light'] || defaultLight);
-  const darkParts = hextohsl(theme['dark'] || defaultDark)
-  const defaultAccent = '#663399'
+  const defaultAccent = '#007aff'
   const defaultAccentContrast = defaultDark
   theme['accent'] = theme['accent'] || defaultAccent
   theme['accent-contrast'] = theme['accent-contrast'] || defaultAccentContrast
