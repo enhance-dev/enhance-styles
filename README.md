@@ -107,12 +107,44 @@ Colors included in the theme setting will have a color scale generated.
 It is recommended to pick a color, then choose a middle lightness as the basis of the scale so as to maximize the amount of steps in the scale that are not white or black.
 You can choose your naming convention.
 Bootstrap like themes will use generic names such as "primary"
-Material like themes will choose a theme color name i.e. 'indigo'
-There are special names, light and dark, accent and accent-contrast. These will not have a scale generated and will be used as the basis for the default theme. The default theme will adjust to user set dark and light modes.
-- `light` is meant to be used as a light text color
-- `dark` is meant to be used as a dark text color
-- `accent` will be set as the [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color) for the document and will be reflected in input and focus styling.
-- `accent-contrast` will be used as the text color used with accented backgrounds. This color should meet accessibility guidelines for contrast.
+Material like themes will choose a theme color name i.e. "indigo"
+
+### light / dark theme support
+Enhance styles supports native light / dark theme mode by default and allows you to override and augment the colors used.
+Light / dark theme support can be overridden by specifying
+- `fore` the foreground color to be used as the default text and border color. You can also specify a  `dark` property in the color section to override.
+- `back` the default light theme background color, defaults to white and can be overridden by setting a `light` value in the color section.
+- `accent` will be set as the [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color) for the document and will be reflected in input and focus styling. This will generate `--accent`, `--accent-h` ( hue ), `--accent-s` ( saturation ), and `--accent-l` ( lightness ) custom properties for you to use in styles.
+- `error` will be set as the error color for the document and will be reflected in input and validation styling. This will generate `--error`, `--error-h` ( hue ), `--error-s` ( saturation ), and `--error-l` ( lightness ) custom properties for you to use in styles.
+
+You can add overrides for the dark theme by making an object with the key `dark` inside the theme section and adding colors there. The result will be output into a `@media (prefers-color-scheme: dark)` style block to enable overrides when the user has their preference set to dark.
+
+#### examples
+Setting default light / dark theme colors
+```json
+"theme": {
+ "accent": "#0075db",
+ "error": "#d60505",
+ "back": "#fefefe",
+ "fore": "#222222"
+},
+```
+
+##### How to override default light theme colors for dark mode
+> default dark theme will be generated from the default light theme so this is optional.
+
+```json
+"theme": {
+ "accent": "#0075db",
+ "error": "#d60505",
+ "back": "#fefefe",
+ "fore": "#222222"
+ "dark": {
+   "accent": "#0088ff",
+   "error": "#ff3d3d"
+ }
+},
+```
 
 ## UPGRADE GUIDE
 If you want to restore the default Boostrap theme colors the copy and paste the code below into your `config.json`
