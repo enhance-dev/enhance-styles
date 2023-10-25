@@ -23,12 +23,6 @@
     "mono": "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
   },
   "theme": {
-    "light": {
-      "accent": "#0075db",
-      "error": "#d60606",
-      "back": "#fefefe",
-      "fore": "#222222"
-    }
   },
   "color": {
   },

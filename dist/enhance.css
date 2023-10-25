@@ -21,10 +21,6 @@
 
 
 
-
-
-
-
   --gray-100: hsl(0, 0%, 90%);
   --gray-200: hsl(0, 0%, 80%);
   --gray-300: hsl(0, 0%, 70%);
@@ -60,6 +56,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-l: 62%;
+    --error-l: 62%;
     --focus-l: -30%;
     --fore: var(--light);
     --back: var(--dark);
@@ -171,6 +168,9 @@ table {
 textarea {
   vertical-align: top;
   overflow: auto;
+}
+dialog {
+  margin: auto;
 }
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {

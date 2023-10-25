@@ -6,35 +6,23 @@ export default function themeColor({ config }) {
   const defaultError = '#d60606'
   const defaultLight = '#fefefe'
   const defaultDark = '#222222'
-  const light = color.light || defaultLight
-  const dark = color.dark || defaultDark
+  const light = color.light || theme.back || defaultLight
+  const dark = color.dark || theme.fore || defaultDark
   const lightParts = hextohsl(light);
-  const lightTheme = theme?.light || {}
   const darkTheme = theme?.dark || {}
-  const lightAccent = lightTheme?.accent || defaultAccent
-  const lightError = lightTheme?.error || defaultError
+  const lightAccent = theme?.accent || defaultAccent
+  const lightError = theme?.error || defaultError
   const accentParts = hextohsl(lightAccent)
   const errorParts = hextohsl(lightError)
   const darkThemeColors = Object.keys(darkTheme).map(name => {
-      if ( name === 'accent' ||
-           name === 'back' ||
-           name === 'fore')  {
-         return
-      }
     return `--${name}: ${darkTheme[name]}`;
   }).join('\n')
-  const lightThemeColors = Object.keys(lightTheme).map(name => {
-  if ( name === 'accent' ||
-       name === 'error' ||
-       name === 'back' ||
-       name === 'fore')  {
-     return
-  }
-    return `--${name}: ${lightTheme[name]}`;
-  }).join('\n')
   const themeColors = Object.keys(theme).map(name => {
-    if ((name === 'light' && typeof theme[name] === 'object') ||
-        (name === 'dark' && typeof theme[name] === 'object'))  {
+    if (name === 'accent' ||
+        name === 'error' ||
+        name === 'back' ||
+        name === 'fore' ||
+       (name === 'dark' && typeof theme[name] === 'object'))  {
      return
     }
     else {
@@ -78,7 +66,6 @@ export default function themeColor({ config }) {
   --error-s: ${errorParts.s}%;
   --error-l: ${errorParts.l}%;
   --error: hsl(var(--error-h), var(--error-s), var(--error-l));
-${lightThemeColors}
 ${themeColors}
 ${colors}
 ${grayScale}
@@ -107,6 +94,7 @@ ${grayScale}
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-l: 62%;
+    --error-l: 62%;
     --focus-l: -30%;
     --fore: var(--light);
     --back: var(--dark);
