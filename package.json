@@ -4,14 +4,15 @@
   "description": "Functional utility classes",
   "main": "index.mjs",
   "type": "module",
+  "module": "./dist/enhance.min.css",
   "bin": {
     "enhance-styles": "./cli.mjs"
   },
   "style": "enhance.css",
   "scripts": {
-    "build": "node ./cli.mjs > ./enhance.css",
-    "minify": "postcss ./enhance.css > ./enhance.min.css",
-    "prod": "run-s build minify",
+    "build": "node ./cli.mjs > ./dist/enhance.css",
+    "minify": "postcss ./dist/enhance.css > ./dist/enhance.min.css",
+    "dist": "run-s build minify",
     "test": "tape './test/**/**.test.js' | tap-arc"
   },
   "repository": {
