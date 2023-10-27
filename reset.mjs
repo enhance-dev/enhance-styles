@@ -25,6 +25,7 @@ svg,
 video {
   display: block;
   max-width: 100%;
+  block-size: auto;
 }
 button,
 input,
