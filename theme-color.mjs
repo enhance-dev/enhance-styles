@@ -1,38 +1,38 @@
 import hextohsl from './hex-to-hsl.mjs'
 
-export default function themeColor({ config }) {
-  const { color={}, theme={} } = config
+export default function themeColor ({ config }) {
+  const { color = {}, theme = {} } = config
   const defaultAccent = '#0075db'
   const defaultError = '#d60606'
   const defaultLight = '#fefefe'
   const defaultDark = '#222222'
   const light = color.light || theme.back || defaultLight
   const dark = color.dark || theme.fore || defaultDark
-  const lightParts = hextohsl(light);
+  const lightParts = hextohsl(light)
   const darkTheme = theme?.dark || {}
   const lightAccent = theme?.accent || defaultAccent
   const lightError = theme?.error || defaultError
   const accentParts = hextohsl(lightAccent)
   const errorParts = hextohsl(lightError)
   const darkThemeColors = Object.keys(darkTheme).map(name => {
-    return `--${name}: ${darkTheme[name]}`;
+    return `--${name}: ${darkTheme[name]};`
   }).join('\n')
   const themeColors = Object.keys(theme).map(name => {
     if (name === 'accent' ||
         name === 'error' ||
         name === 'back' ||
         name === 'fore' ||
-       (name === 'dark' && typeof theme[name] === 'object'))  {
-     return
+       (name === 'dark' && typeof theme[name] === 'object')) {
+      return
     }
     else {
       return colorSteps(hextohsl(theme[name]), name)
     }
   }).join('\n')
   const colors = Object.keys(color).map(name => `  --${name}: ${color[name]};`).join('\n')
-  const grayScale = colorSteps({ h: lightParts.h, s: 0, l: 50}, 'gray')
+  const grayScale = colorSteps({ h: lightParts.h, s: 0, l: 50 }, 'gray')
 
-  function colorSteps(color, name) {
+  function colorSteps (color, name) {
     const hue = color.h
     const saturation = color.s
     const luminance = color.l
