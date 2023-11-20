@@ -2,21 +2,41 @@ import hextohsl from './hex-to-hsl.mjs'
 
 export default function themeColor ({ config }) {
   const { color = {}, theme = {} } = config
+
   const defaultAccent = '#0075db'
   const defaultError = '#d60606'
   const defaultLight = '#fefefe'
   const defaultDark = '#222222'
+
   const light = color.light || theme.back || defaultLight
   const dark = color.dark || theme.fore || defaultDark
   const lightParts = hextohsl(light)
   const darkTheme = theme?.dark || {}
+
   const lightAccent = theme?.accent || defaultAccent
+  const lightAccentParts = hextohsl(lightAccent)
+  const darkAccent = theme?.dark?.accent || theme?.accent || defaultAccent
+  const darkAccentParts = hextohsl(darkAccent)
+
+  // If no custom dark accent colour provided, modify default accent's lightness for dark mode
+  if (darkAccent === lightAccent || darkAccent === defaultAccent) {
+    darkAccentParts.l = 62
+  }
+
   const lightError = theme?.error || defaultError
-  const accentParts = hextohsl(lightAccent)
-  const errorParts = hextohsl(lightError)
+  const lightErrorParts = hextohsl(lightError)
+  const darkError = theme?.dark.error || theme?.error || defaultError
+  const darkErrorParts = hextohsl(darkError)
+
+  // If no custom dark error colour provided, modify default error's lightness for dark mode
+  if (darkError === lightError || darkError === defaultError) {
+    darkErrorParts.l = 62
+  }
+
   const darkThemeColors = Object.keys(darkTheme).map(name => {
     return `--${name}: ${darkTheme[name]};`
   }).join('\n')
+
   const themeColors = Object.keys(theme).map(name => {
     if (name === 'accent' ||
         name === 'error' ||
@@ -54,17 +74,17 @@ export default function themeColor ({ config }) {
   return /*css*/`
 /*** Theme Colors ***/
 :root {
-  --accent-h: ${accentParts.h};
-  --accent-s: ${accentParts.s}%;
-  --accent-l: ${accentParts.l}%;
+  --accent-h: ${lightAccentParts.h};
+  --accent-s: ${lightAccentParts.s}%;
+  --accent-l: ${lightAccentParts.l}%;
   --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --light: ${light};
   --dark: ${dark};
   --fore: var(--dark, currentColor);
   --back: var(--light);
-  --error-h: ${errorParts.h};
-  --error-s: ${errorParts.s}%;
-  --error-l: ${errorParts.l}%;
+  --error-h: ${lightErrorParts.h};
+  --error-s: ${lightErrorParts.s}%;
+  --error-l: ${lightErrorParts.l}%;
   --error: hsl(var(--error-h), var(--error-s), var(--error-l));
 ${themeColors}
 ${colors}
@@ -93,8 +113,12 @@ ${grayScale}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-l: 62%;
-    --error-l: 62%;
+    --accent-h: ${darkAccentParts.h};
+    --accent-s: ${darkAccentParts.s}%;
+    --accent-l: ${darkAccentParts.l}%;
+    --error-h: ${darkErrorParts.h};
+    --error-s: ${darkErrorParts.s}%;
+    --error-l: ${darkErrorParts.l}%;
     --focus-l: -30%;
     --fore: var(--light);
     --back: var(--dark);
@@ -104,3 +128,4 @@ ${grayScale}
 `
 
 }
+
