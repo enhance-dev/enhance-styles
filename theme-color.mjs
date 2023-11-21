@@ -25,7 +25,7 @@ export default function themeColor ({ config }) {
 
   const lightError = theme?.error || defaultError
   const lightErrorParts = hextohsl(lightError)
-  const darkError = theme?.dark.error || theme?.error || defaultError
+  const darkError = theme?.dark?.error || theme?.error || defaultError
   const darkErrorParts = hextohsl(darkError)
 
   // If no custom dark error colour provided, modify default error's lightness for dark mode

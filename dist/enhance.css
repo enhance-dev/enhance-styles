@@ -55,7 +55,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --accent-h: 208;
+    --accent-s: 100%;
     --accent-l: 62%;
+    --error-h: 0;
+    --error-s: 94.5%;
     --error-l: 62%;
     --focus-l: -30%;
     --fore: var(--light);
@@ -122,6 +126,7 @@ svg,
 video {
   display: block;
   max-width: 100%;
+  block-size: auto;
 }
 button,
 input,
