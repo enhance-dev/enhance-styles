@@ -215,7 +215,7 @@ Theme scales are intended to give you enough colors for all use cases including 
 
 ## Prior art
 
-Enhance styles would not exist without the breakthrough thinking of [Adam Morse](https://mrmrs.cc/) on who realized that creating a capped size stylesheet with common, single use, low specificity classes results in better performance and maintanance than append only stylesheets that can only grow as more features are added. His CSS work can be seen in [[Tachyons](https://tachyons.io/).
+Enhance styles would not exist without the breakthrough thinking of [Adam Morse](https://mrmrs.cc/) on who realized that creating a capped size stylesheet with common, single use, low specificity classes results in better performance and maintanance than append only stylesheets that can only grow as more features are added. His CSS work can be seen in [Tachyons](https://tachyons.io/).
 
 
 Much of the implementation of our fluid scales was adapted from [@georgedoescode/fluid-design-system-on-demand-builders](https://github.com/georgedoescode/fluid-design-system-on-demand-builders), which was itself adapted from [Utopia](https://utopia.fyi).
