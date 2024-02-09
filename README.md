@@ -1,23 +1,32 @@
 # enhance-styles
-Functional utility classes
+Single responsibility CSS classes — optimized for [Enhance](https://enhance.dev) and the web at large.
 
 ## Install
-`git clone https://github.com/enhance-dev/enhance-styles.git`
-`cd enhance-styles`
+```shell
+git clone https://github.com/enhance-dev/enhance-styles.git
+```
 
-## Usage
+## Standalone usage
 
-`npm run build`
+See [the customization instructions](#customize) for a reference to which aspects of Enhance Styles can be adjusted to your liking.
 
-> Outputs default stylesheet in `enhance.css`
+After writing your preferred `config.json` options, write the generated styles to `dist/enhance.css`:
 
-`npm run prod`
+```shell
+npm run build
+```
 
-> Outputs a minified version as well `enhance.min.css`
+Minify `dist/enhance.css` to `dist/enhance.min.css`:
+
+```shell
+npm run prod
+```
+
+Copy `enhance.css` or `enhance.min.css` to your project and either reference it with the `<link>` element, or inline it in a `<style>` element in your document head.
 
 ## Notable concepts
 
-A couple aspects of Enhance Styles may be different from other CSS methodologies or frameworks you’ve used before. These are described briefly below; for more in depth documentation, refer to [the Enhance Styles docs](https://enhance.dev/docs/learn/concepts/styling/).
+Several aspects of Enhance Styles may be different from other CSS methodologies or frameworks you’ve used before. These are described briefly below; for more in depth documentation, refer to [the Enhance Styles docs on Enhance.dev](https://enhance.dev/docs/enhance-styles/).
 
 ### Logical properties
 
@@ -91,13 +100,12 @@ Configuration options are:
 
 ### `fonts`
 `fonts` are the font stacks you wish to use. They can be named however you like, but it is recommended to retain a sans-serif, a serif and a mono stack for most pages.
+
 The default stacks are:
+
 - sans "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
 - serif "Georgia,Cambria,Times New Roman,Times,serif"
 - mono "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
-
-#### Example
-`font-sans`
 
 ### `theme`
 `theme` is the set of theme colors.
@@ -106,12 +114,14 @@ Colors can be named however you like.
 Colors included in the theme setting will have a color scale generated.
 It is recommended to pick a color, then choose a middle lightness as the basis of the scale so as to maximize the amount of steps in the scale that are not white or black.
 You can choose your naming convention.
-Bootstrap like themes will use generic names such as "primary"
-Material like themes will choose a theme color name i.e. "indigo"
+Bootstrap-like themes will use generic names such as "primary".
+Material-like themes will choose a theme color name i.e. "indigo".
 
 ### light / dark theme support
 Enhance styles supports native light / dark theme mode by default and allows you to override and augment the colors used.
-Light / dark theme support can be overridden by specifying
+
+Light / dark theme support can be overridden by specifying:
+
 - `fore` the foreground color to be used as the default text and border color. You can also specify a  `dark` property in the color section to override.
 - `back` the default light theme background color, defaults to white and can be overridden by setting a `light` value in the color section.
 - `accent` will be set as the [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color) for the document and will be reflected in input and focus styling. This will generate `--accent`, `--accent-h` ( hue ), `--accent-s` ( saturation ), and `--accent-l` ( lightness ) custom properties for you to use in styles.
@@ -120,7 +130,8 @@ Light / dark theme support can be overridden by specifying
 You can add overrides for the dark theme by making an object with the key `dark` inside the theme section and adding colors there. The result will be output into a `@media (prefers-color-scheme: dark)` style block to enable overrides when the user has their preference set to dark.
 
 #### examples
-Setting default light / dark theme colors
+Setting default light / dark theme colors:
+
 ```json
 "theme": {
  "accent": "#0075db",
@@ -131,7 +142,7 @@ Setting default light / dark theme colors
 ```
 
 ##### How to override default light theme colors for dark mode
-> default dark theme will be generated from the default light theme so this is optional.
+A default dark theme will be generated from the default light theme, so this is optional.
 
 ```json
 "theme": {
@@ -146,8 +157,9 @@ Setting default light / dark theme colors
 },
 ```
 
-## UPGRADE GUIDE
-If you want to restore the default Boostrap theme colors the copy and paste the code below into your `config.json`
+##### Restoring
+If you want to restore the default theme colors, copy and paste the code below into your `config.json`:
+
 ```json
 "theme": {
   "accent": "#007AFF",
@@ -179,13 +191,14 @@ Theme scales are intended to give you enough colors for all use cases including 
 ```
 
 ### `color`
-`color` is for one off spot colors. Colors must be specified as hexidecimal and can be named however you like.
-#### example color
+`color` is for one off spot colors. Colors must be specified as hexidecimal and can be named however you like. For example:
+
  `"crimson": "#eb0052"`
 
 ### `grid`
-`grid` contains the settings for a css grid based grid
-- steps are the amount of sections you want in your grid. Default is 6.
+`grid` contains the settings for CSS grid classes.
+
+- `steps` are the amount of sections you want in your grid. Default is 6.
 
 ### `properties`
 `properties` is an object of named value custom properties. These can be used to supply variables for anything from drop shadows to animations. [Some inspiration](https://open-props.style/)
