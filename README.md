@@ -111,7 +111,7 @@ You can choose your naming convention.
 Bootstrap-like themes will use generic names such as "primary".
 Material-like themes will choose a theme color name i.e. "indigo".
 
-### light / dark theme support
+#### Light / dark theme support
 Enhance styles supports native light / dark theme mode by default and allows you to override and augment the colors used.
 
 Light / dark theme support can be overridden by specifying:
@@ -123,7 +123,7 @@ Light / dark theme support can be overridden by specifying:
 
 You can add overrides for the dark theme by making an object with the key `dark` inside the theme section and adding colors there. The result will be output into a `@media (prefers-color-scheme: dark)` style block to enable overrides when the user has their preference set to dark.
 
-#### examples
+#### Examples
 Setting default light / dark theme colors:
 
 ```json
@@ -135,7 +135,7 @@ Setting default light / dark theme colors:
 },
 ```
 
-##### How to override default light theme colors for dark mode
+##### Overriding default light theme colors for dark mode
 A default dark theme will be generated from the default light theme, so this is optional.
 
 ```json
@@ -151,8 +151,8 @@ A default dark theme will be generated from the default light theme, so this is 
 },
 ```
 
-##### Restoring
-If you want to restore the default theme colors, copy and paste the code below into your `config.json`:
+##### Restoring default theme colors
+If you want to restore the default theme colors, copy and paste the code below into your `styleguide.json`:
 
 ```json
 "theme": {
@@ -171,7 +171,7 @@ If you want to restore the default theme colors, copy and paste the code below i
 
 Theme scales are intended to give you enough colors for all use cases including hover, disabled, active and visited states.
 
-#### example color theme scale
+##### Example color theme scale
 ```css
   --primary-100: hsl(212, 74.7%, 88%);
   --primary-200: hsl(212, 74.7%, 78%);
