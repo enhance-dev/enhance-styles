@@ -1,28 +1,13 @@
 # enhance-styles
 Single responsibility CSS classes — optimized for [Enhance](https://enhance.dev) and the web at large.
 
-## Install
-```shell
-git clone https://github.com/enhance-dev/enhance-styles.git
-```
+## Usage in Enhance apps
 
-## Standalone usage
+All new Enhance projects come preloaded with Enhance Styles; no installation is required.
 
-See [the customization instructions](#customize) for a reference to which aspects of Enhance Styles can be adjusted to your liking.
+To customize Enhance Styles within your Enhance application, see [the Customize section](#customize).
 
-After writing your preferred `config.json` options, write the generated styles to `dist/enhance.css`:
-
-```shell
-npm run build
-```
-
-Minify `dist/enhance.css` to `dist/enhance.min.css`:
-
-```shell
-npm run prod
-```
-
-Copy `enhance.css` or `enhance.min.css` to your project and either reference it with the `<link>` element, or inline it in a `<style>` element in your document head.
+See [the standalone usage section](#standalone-usage) section for instructions on using Enhance Styles outside of Enhance apps.
 
 ## Notable concepts
 
@@ -66,7 +51,16 @@ For Enhance Styles' configuration, the scale factors can be set using any [ratio
 
 ## Customize
 
-Edit `config.json` and rerun to output your customized stylesheet.
+Within an Enhance application, first add a `styleguide.json` JSON config file (or choose another name) at the root of your Enhance project. You can copy [the default configuration](https://github.com/enhance-dev/enhance-styles/blob/main/config.json) to get started. See individual sections below for more information on configuring these options.
+
+Next, edit your project’s `.arc` file to tell Enhance Styles where to find this config file by including the following:
+
+```arc
+@enhance-styles
+config styleguide.json
+```
+
+Enhance Styles will now use this configuration to customize its generated styles.
 
 ### `typeScale`
 
@@ -212,6 +206,28 @@ Theme scales are intended to give you enough colors for all use cases including 
 
 ### `radii`
 `radii` is an array of border radii. The defaults are 2, 8, 16, and 9999 ( for use with pill buttons )
+
+## Standalone usage
+
+To use Enhance Styles in other applications or frameworks, clone the repository:
+
+```shell
+git clone https://github.com/enhance-dev/enhance-styles.git
+```
+
+Enhance Styles can be customized to your liking. See [the customization instructions](#customize) for a reference to which aspects of Enhance Styles can be adjusted to your liking. After writing your preferred `config.json` options, write the generated styles to `dist/enhance.css`:
+
+```shell
+npm run build
+```
+
+Minify `dist/enhance.css` to `dist/enhance.min.css`:
+
+```shell
+npm run prod
+```
+
+Copy `enhance.css` or `enhance.min.css` to your project and either reference it with the `<link>` element, or inline it in a `<style>` element in your document head.
 
 ## Prior art
 
