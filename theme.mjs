@@ -13,17 +13,17 @@ import spaceScaleProperties from './space-scale-properties.mjs'
 
 export default function theme(config) {
   return /*css*/`
-${themeColor({config})}
-${properties({config})}
-${typeScaleProperties({config})}
-${spaceScaleProperties({config})}
-${reset()}
-${typeface({config})}
-${smoothing({config})}
-${background({config})}
-${border({config})}
-${color({config})}
-${fill({config})}
-${stroke({config})}
+${themeColor({ config })}
+${properties({ config })}
+${typeScaleProperties({ config })}
+${spaceScaleProperties({ config })}
+${reset({ config })}
+${typeface({ config })}
+${smoothing()}
+${background({ config })}
+${border({ config })}
+${color({ config })}
+${fill({ config })}
+${stroke({ config })}
 `
 }

@@ -1,5 +1,6 @@
-export default function reset (query) {
-  return /*css*/`
+export default function reset({ config }) {
+  const { reset = true } = config
+  return reset ? /*css*/`
 /*** Reset ***/
 *,
 *::before,
@@ -94,5 +95,5 @@ dialog {
     scroll-behavior: auto !important;
   }
 }
-`
+` : ''
 }
