@@ -207,6 +207,16 @@ Theme scales are intended to give you enough colors for all use cases including 
 ### `radii`
 `radii` is an array of border radii. The defaults are 2, 8, 16, and 9999 ( for use with pill buttons )
 
+### `reset`
+
+Enhance Styles includes a CSS reset by default. To opt out of this reset being included in the stylesheet emitted by Enhance Styles, add the following to your configuration:
+
+```json
+{
+  "reset": false
+}
+```
+
 ## Standalone usage
 
 To use Enhance Styles in other applications or frameworks, clone the repository:
