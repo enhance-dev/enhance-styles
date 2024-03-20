@@ -1,4 +1,4 @@
-export default function reset({ config }) {
+export default function reset({ config = {} } = {}) {
   const { reset = true } = config
   return reset ? /*css*/`
 /*** Reset ***/
