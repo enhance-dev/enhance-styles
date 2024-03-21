@@ -17,7 +17,7 @@ const noColor = {
 
 test('themeColor', t => {
   t.equal(themeColor({ config: noThemeColor }), '', 'should emit an empty string when `config.theme` and `config.color` are both `false`')
-  t.notOk(themeColor({ config: noTheme }).includes('/*** Theme Colors ***/'), 'should not includes theme colors when `config.theme` is `false`')
-  t.notOk(themeColor({ config: noColor }).includes('/*** Spot Colors ***/'), 'should not includes theme colors when `config.color` is `false`')
+  t.notOk(themeColor({ config: noTheme }).includes('/*** Theme Colors ***/'), 'should not include theme colors when `config.theme` is `false`')
+  t.notOk(themeColor({ config: noColor }).includes('/*** Spot Colors ***/'), 'should not include theme colors when `config.color` is `false`')
   t.end()
 })
