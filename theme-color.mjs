@@ -53,7 +53,7 @@ export default function themeColor({ config }) {
       return colorSteps(hextohsl(theme[name]), name)
     }
   }).join('\n')
-  const colors = Object.keys(color).length ? Object.keys(color).map(name => `--${name}: ${color[name]};`).join('\n  ') : null
+  const colors = Object.keys(color).length ? Object.keys(color).map(name => `--${name}: ${color[name]};`).join('\n  ') : ''
   const grayScale = colorSteps({ h: lightParts.h, s: 0, l: 50 }, 'gray')
 
   function colorSteps(color, name) {
@@ -137,7 +137,7 @@ ${grayScale}
 
   let result = ``
   if (theme !== false) result += themeStyles
-  if (color !== false) result += colorStyles
+  if (color !== false && Object.keys(color).length) result += colorStyles
 
   return result
 }
