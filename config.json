@@ -22,12 +22,9 @@
     "serif": "Georgia,Cambria,Times New Roman,Times,serif",
     "mono": "Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace"
   },
-  "theme": {
-  },
-  "color": {
-  },
-  "properties": {
-  },
+  "theme": {},
+  "color": {},
+  "properties": {},
   "grid": {
     "steps": 6
   },
@@ -35,16 +32,7 @@
     "lg": "48em"
   },
   "borders": {
-    "widths": [
-      1,
-      2,
-      4
-    ]
+    "widths": [1, 2, 4]
   },
-  "radii": [
-    2,
-    8,
-    16,
-    9999
-  ]
+  "radii": [2, 8, 16, 9999]
 }
