@@ -1,8 +1,7 @@
-
 /**
- * For more information please see the documentation at : https://github.com/enhance-dev/enhance-styles#readme
+ * ENHANCE STYLES
+ * For more information, please see the documentation at : https://github.com/enhance-dev/enhance-styles#readme
  */
-
 
 /*** Theme Colors ***/
 :root {
@@ -18,9 +17,6 @@
   --error-s: 94.5%;
   --error-l: 43.1%;
   --error: hsl(var(--error-h), var(--error-s), var(--error-l));
-
-
-
   --gray-100: hsl(0, 0%, 90%);
   --gray-200: hsl(0, 0%, 80%);
   --gray-300: hsl(0, 0%, 70%);
@@ -30,29 +26,24 @@
   --gray-700: hsl(0, 0%, 30%);
   --gray-800: hsl(0, 0%, 20%);
   --gray-900: hsl(0, 0%, 10%);
-    
   --focus-l: 30%;
   accent-color: var(--accent, royalblue);
   color-scheme: light dark;
 }
-
 :is(a, button, input, textarea, summary):focus:not(:focus-visible) {
   outline: none;
 }
-
 :is(a, button, input, textarea, summary):focus-visible {
   outline: max(var(--focus-size, 1px), 1px) solid var(--accent, royalblue);
   outline-offset: var(--focus-offset, 0);
   box-shadow: 0 0 0 max(var(--focus-size, 3px), 3px) hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + var(--focus-l)))
   ;
 }
-
 :is(a, button, input, textarea, summary):not(:focus):not(:placeholder-shown):invalid {
   outline: max(var(--focus-size, 1px), 1px) solid var(--error, crimson);
   outline-offset: var(--focus-offset, 0);
   box-shadow: 0 0 0 3px hsl(var(--error-h), var(--error-s), calc(var(--error-l) + var(--focus-l)));
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-h: 208;
@@ -64,7 +55,6 @@
     --focus-l: -30%;
     --fore: var(--light);
     --back: var(--dark);
-    
   }
 }
 

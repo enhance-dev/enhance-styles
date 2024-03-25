@@ -1,7 +1,11 @@
 import hextohsl from './hex-to-hsl.mjs'
 
-export default function themeColor ({ config }) {
+export default function themeColor({ config }) {
   const { color = {}, theme = {} } = config
+
+  if (theme === false) {
+    return ''
+  }
 
   const defaultAccent = '#0075db'
   const defaultError = '#d60606'
@@ -39,20 +43,20 @@ export default function themeColor ({ config }) {
 
   const themeColors = Object.keys(theme).map(name => {
     if (name === 'accent' ||
-        name === 'error' ||
-        name === 'back' ||
-        name === 'fore' ||
-       (name === 'dark' && typeof theme[name] === 'object')) {
+      name === 'error' ||
+      name === 'back' ||
+      name === 'fore' ||
+      (name === 'dark' && typeof theme[name] === 'object')) {
       return
     }
     else {
       return colorSteps(hextohsl(theme[name]), name)
     }
   }).join('\n')
-  const colors = Object.keys(color).map(name => `  --${name}: ${color[name]};`).join('\n')
+  const colors = Object.keys(color).length ? Object.keys(color).map(name => `--${name}: ${color[name]};`).join('\n  ') : ''
   const grayScale = colorSteps({ h: lightParts.h, s: 0, l: 50 }, 'gray')
 
-  function colorSteps (color, name) {
+  function colorSteps(color, name) {
     const hue = color.h
     const saturation = color.s
     const luminance = color.l
@@ -66,12 +70,10 @@ export default function themeColor ({ config }) {
   --${name}-600: hsl(${hue}, ${saturation}%, ${Math.floor(luminance - 10)}%);
   --${name}-700: hsl(${hue}, ${saturation}%, ${Math.floor(luminance - 20)}%);
   --${name}-800: hsl(${hue}, ${saturation}%, ${Math.floor(luminance - 30)}%);
-  --${name}-900: hsl(${hue}, ${saturation}%, ${Math.floor(luminance - 40)}%);
-    `
+  --${name}-900: hsl(${hue}, ${saturation}%, ${Math.floor(luminance - 40)}%);`
   }
 
-
-  return /*css*/`
+  const themeStyles = `
 /*** Theme Colors ***/
 :root {
   --accent-h: ${lightAccentParts.h};
@@ -87,7 +89,6 @@ export default function themeColor ({ config }) {
   --error-l: ${lightErrorParts.l}%;
   --error: hsl(var(--error-h), var(--error-s), var(--error-l));
 ${themeColors}
-${colors}
 ${grayScale}
   --focus-l: 30%;
   accent-color: var(--accent, royalblue);
@@ -125,7 +126,19 @@ ${grayScale}
     ${darkThemeColors}
   }
 }
+`.replace(/^\s*\n/gm, '') // remove empty newlines
+
+  const colorStyles = `
+/*** Spot Colors ***/
+:root {
+  ${colors}
+}
 `
 
+  let result = ``
+  if (theme !== false) result += themeStyles
+  if (Object.keys(color).length) result += colorStyles
+
+  return result
 }
 
