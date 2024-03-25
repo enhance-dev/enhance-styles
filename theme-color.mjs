@@ -3,7 +3,7 @@ import hextohsl from './hex-to-hsl.mjs'
 export default function themeColor({ config }) {
   const { color = {}, theme = {} } = config
 
-  if (color === false && theme === false) {
+  if (theme === false) {
     return ''
   }
 
@@ -137,7 +137,7 @@ ${grayScale}
 
   let result = ``
   if (theme !== false) result += themeStyles
-  if (color !== false && Object.keys(color).length) result += colorStyles
+  if (Object.keys(color).length) result += colorStyles
 
   return result
 }
