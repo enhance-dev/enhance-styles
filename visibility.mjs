@@ -1,4 +1,4 @@
-export default function overflow(query = '') {
+export default function visibility(query = '') {
   return /*css*/`
 /*** Visibility ***/
 .invisible${query}{visibility:hidden;}
