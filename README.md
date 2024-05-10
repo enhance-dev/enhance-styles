@@ -244,7 +244,7 @@ npm run build
 Minify `dist/enhance.css` to `dist/enhance.min.css`:
 
 ```shell
-npm run prod
+npm run dist
 ```
 
 Copy `enhance.css` or `enhance.min.css` to your project and either reference it with the `<link>` element, or inline it in a `<style>` element in your document head.
