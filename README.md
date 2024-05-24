@@ -238,12 +238,12 @@ npm i -D @enhance/styles
 The built in CLI, `enhance-styles`, takes two arguments: `--config=` and `--output=`. The `--config` argument is the path to your configuration file and the `--output` argument is the path where the .css file will be created. 
 
 If you do not specify config, the default configuration will be used.  
-You can use the default configuration or create your own. We recommend a local project file like `./enhance-styles.json`.
+You can use the default configuration or [create your own](#customize). We recommend a local project file like `./styleguide.json`.
 
 If you do not specify output, the CSS will be printed to stdout.
 
 ```shell
-npx enhance-styles --config=./enhance-styles.json --output=./public/enhance.css
+npx enhance-styles --config=./styleguide.json --output=./public/enhance.css
 ```
 
 Or add it as a script to your package.json:
@@ -251,7 +251,7 @@ Or add it as a script to your package.json:
 ```json
 {
   "scripts": {
-    "enhance-styles": "enhance-styles --config=./enhance-styles.json --output=./public/enhance.css"
+    "enhance-styles": "enhance-styles --config=./styleguide.json --output=./public/enhance.css"
   }
 }
 ```
