@@ -14,7 +14,7 @@ function getArg(key) {
 const here = fileURLToPath(new URL('.', import.meta.url))
 
 const configArg = getArg('config')
-const destArg = getArg('dest')
+const outputArg = getArg('output')
 const configPath = configArg
   ? join(cwd(), configArg)
   : join(here, './config.json')
@@ -28,13 +28,13 @@ catch (err) {
   process.exit(1)
 }
 
-if (destArg) {
-  const destPath = join(cwd(), destArg)
+if (outputArg) {
+  const outputPath = join(cwd(), outputArg)
   try {
-    writeFileSync(destPath, styles(configBlob))
+    writeFileSync(outputPath, styles(configBlob))
   }
   catch (err) {
-    stderr.write(`Error writing to destination file: ${destPath}\n`)
+    stderr.write(`Error writing to output file: ${outputPath}\n`)
     process.exit(1)
   }
 } else {
