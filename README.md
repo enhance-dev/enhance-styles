@@ -229,25 +229,40 @@ Enhance Styles includes a CSS reset by default. To opt out of this reset being i
 
 ## Standalone usage
 
-To use Enhance Styles in other applications or frameworks, clone the repository:
+To use Enhance Styles in other applications or frameworks, install Enhance Styles from npm:
 
 ```shell
-git clone https://github.com/enhance-dev/enhance-styles.git
+npm i -D @enhance/styles
 ```
 
-Enhance Styles can be customized to your liking. See [the customization instructions](#customize) for a reference to which aspects of Enhance Styles can be adjusted to your liking. After writing your preferred `config.json` options, write the generated styles to `dist/enhance.css`:
+The built in CLI, `enhance-styles`, takes two arguments: `--config=` and `--output=`. The `--config` argument is the path to your configuration file and the `--output` argument is the path where the .css file will be created. 
+
+If you do not specify config, the default configuration will be used.  
+You can use the default configuration or [create your own](#customize). We recommend a local project file like `./styleguide.json`.
+
+If you do not specify output, the CSS will be printed to stdout.
 
 ```shell
-npm run build
+npx enhance-styles --config=./styleguide.json --output=./public/enhance.css
 ```
 
-Minify `dist/enhance.css` to `dist/enhance.min.css`:
+Or add it as a script to your package.json:
+
+```json
+{
+  "scripts": {
+    "enhance-styles": "enhance-styles --config=./styleguide.json --output=./public/enhance.css"
+  }
+}
+```
+
+Then run:
 
 ```shell
-npm run dist
+npm run enhance-styles
 ```
 
-Copy `enhance.css` or `enhance.min.css` to your project and either reference it with the `<link>` element, or inline it in a `<style>` element in your document head.
+If you'd like, minification can be added as a part of your build process.
 
 ## Prior art
 
