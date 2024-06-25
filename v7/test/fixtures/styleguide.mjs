@@ -27,9 +27,8 @@ export default {
     maxInlineSize: '72ch',
   },
   fonts: {
-    sans: 'system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif',
-    serif: 'Georgia, Cambria, Times New Roman, Times, serif',
-    mono: 'Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
+    sans: 'Papyrus, Comic Sans, sans-serif',
+    serif: 'Wingdings, serif',
   },
   grid: {
     steps: 6,
