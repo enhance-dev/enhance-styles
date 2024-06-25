@@ -1,0 +1,5 @@
+TODO when back from NS
+
+- Recompose group style generators (layout, typography, theme, index)
+- Check defaults defined for all custom classes
+- Start building in custom property emission for all custom fields in styleguide

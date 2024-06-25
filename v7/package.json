@@ -1,0 +1,55 @@
+{
+  "name": "@enhance/styles",
+  "version": "7.0.0-RC.0",
+  "description": "Parametric CSS for web apps",
+  "main": "index.mjs",
+  "type": "module",
+  "module": "./dist/enhance.min.css",
+  "bin": {
+    "enhance-styles": "./cli.mjs"
+  },
+  "style": "enhance.css",
+  "scripts": {
+    "build": "node ./cli.mjs > ./dist/enhance.css",
+    "minify": "postcss ./dist/enhance.css > ./dist/enhance.min.css",
+    "dist": "run-s build minify",
+    "test": "tape './test/**/**.test.js' | tap-arc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enhance-dev/enhance-styles.git"
+  },
+  "keywords": [
+    "css",
+    "enhance",
+    "functional",
+    "utility",
+    "classes"
+  ],
+  "author": {
+    "name": "Kristofer Joseph",
+    "url": "https://github.com/kristoferjoseph"
+  },
+  "contributors": [
+    {
+      "name": "Cole Peters",
+      "url": "https://github.com/colepeters/"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/enhance-dev/enhance-styles/issues"
+  },
+  "homepage": "https://github.com/enhance-dev/enhance-styles#readme",
+  "dependencies": {
+    "color-to-hsla": "^0.1.1"
+  },
+  "devDependencies": {
+    "cssnano": "^5.0.14",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^9.1.0",
+    "tap-arc": "^0.3.5",
+    "tape": "^5.8.1"
+  }
+}
+
