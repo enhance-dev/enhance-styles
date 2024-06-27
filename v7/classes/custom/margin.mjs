@@ -15,6 +15,14 @@ export default function margin(state = {}) {
     output += `.m${dir[0]}${breakpoint}-none { margin-${dir[1]}: 0; }`
   })
 
+  // Auto margins
+  output += '\n'
+  output += `.m-auto${breakpoint} { margin: auto; }`
+  directionEntries.forEach(dir => {
+    output += '\n'
+    output += `.m${dir[0]}${breakpoint}-auto { margin-${dir[1]}: auto; }`
+  })
+
   // Margin scale
   if (sizes.length) {
     sizes.forEach(size => {
