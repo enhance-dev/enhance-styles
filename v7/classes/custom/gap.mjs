@@ -1,17 +1,19 @@
-import { generateSpaceScaleProperties, getScalePropertyNames, defaultConfig } from '../../lib/scales.mjs'
+import getCustomProperties from '../../lib/getCustomProperties.mjs'
+import { generateSpaceScaleProperties } from '../../lib/scales.mjs'
 
-export default function gap({ breakpoint = '', spaceScale = defaultConfig } = {}) {
-  let output = `
-/*** Gap ***/
-`
-  const properties = generateSpaceScaleProperties(spaceScale)
-  const propertyNames = getScalePropertyNames(properties)
+export default function gap(state = {}) {
+  const { config = {}, breakpoint = '' } = state
+  const sizes = getCustomProperties(generateSpaceScaleProperties(config.spaceScale))
 
-  propertyNames.forEach(pn => {
-    const step = pn.replace('--space-', '')
-    output += `.gap${step}${breakpoint}{gap:var(${pn});}\n`
-  })
+  let output = ''
 
+  if (sizes.length) {
+    output += '/*** Gap ***/'
+    sizes.forEach(size => {
+      output += '\n'
+      output += `.gap${size.replace('--space-', '')}${breakpoint} { gap: var(${size}); }`
+    })
+  }
   return output
 }
 

@@ -1,4 +1,4 @@
-export default function borderRadius(state = {}) {
+export default function fonts(state = {}) {
   const { config = {} } = state
   const { fonts = { /* DEFAULTS HERE */ } } = config
 

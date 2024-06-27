@@ -1,18 +1,19 @@
-const defaultFonts = `
-.font-sans{font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;}
-.font-serif{font-family: Georgia, Cambria, Times New Roman, Times, serif;}
-.font-mono{font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;}
-`
+import getCustomProperties from '../../lib/getCustomProperties.mjs'
+import fonts from '../../properties/fonts.mjs'
 
-export default function family({ fonts = defaultFonts } = {}) {
-  const output = Object.keys(fonts).length
-    ? Object.keys(fonts)
-      .map(key => `.font-${key}{font-family: ${fonts[key]};}`)
-      .join('\n')
-    : defaultFonts
+export default function fontFamily(state = {}) {
+  const { config = {} } = state
+  const families = getCustomProperties(fonts({ config }))
 
-  return /*css*/`
-/*** Font Family ***/
-${output}
-`
+  let output = ''
+
+  if (families.length) {
+    output += '/*** Font Family ***/'
+    families.forEach(family => {
+      output += '\n'
+      output += `.${family.replace('--', '')} { font-family: var(${family}); }`
+    })
+  }
+
+  return output
 }

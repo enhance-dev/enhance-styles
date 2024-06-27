@@ -1,23 +1,32 @@
-import generateDirectionalVariants from '../../lib/generateDirectionalVariants.mjs'
-import { defaultConfig } from '../../lib/scales.mjs'
+import directions from '../../lib/directions.mjs'
+import getCustomProperties from '../../lib/getCustomProperties.mjs'
+import { generateSpaceScaleProperties } from '../../lib/scales.mjs'
 
-export default function padding({ breakpoint = '', spaceScale = defaultConfig } = {}) {
-  let output = /*css*/`
-/*** Padding ***/
-.p-none${breakpoint}{padding:0}
-.pb-none${breakpoint}{padding-block:0}
-.pbs-none${breakpoint}{padding-block-start:0}
-.pbe-none${breakpoint}{padding-block-end:0}
-.pi-none${breakpoint}{padding-inline:0}
-.pis-none${breakpoint}{padding-inline-start:0}
-.pie-none${breakpoint}{padding-inline-end:0}
-`
-  function template({ label, step, direction, value }) {
-    // Redefine `direction` arg with a formatted version of it, if the arg is truthy
-    if (direction) direction = `-${direction}`
-    return `.p${label}${step}${breakpoint}{padding${direction}:${value};}\n`
+export default function padding(state = {}) {
+  const { config = {}, breakpoint = '' } = state
+  const directionEntries = Object.entries(directions)
+  const sizes = getCustomProperties(generateSpaceScaleProperties(config.spaceScale))
+
+  // Null padding
+  let output = '/*** Padding ***/\n'
+  output += `.p-none${breakpoint} { padding: 0; }`
+  directionEntries.forEach(dir => {
+    output += '\n'
+    output += `.p${dir[0]}${breakpoint}-none { padding-${dir[1]}: 0; }`
+  })
+
+  // Padding scale
+  if (sizes.length) {
+    sizes.forEach(size => {
+      output += '\n'
+      output += `.p${size.replace('--space-', '')}${breakpoint} { padding: var(${size}); }}`
+      directionEntries.forEach(dir => {
+        output += '\n'
+        output += `.p${dir[0]}${size.replace('--space-', '')}${breakpoint} { padding-${dir[1]}: var(${size}); }`
+      })
+    })
   }
 
-  output += generateDirectionalVariants({ spaceScale, template })
   return output
 }
+
