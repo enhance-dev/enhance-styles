@@ -1,12 +1,12 @@
 import test from 'tape'
 
+import getCustomProperties from '../../lib/getCustomProperties.mjs'
 import {
   getRatioValue,
   ratios,
   roundToHundreths,
   generateClamp,
   generateScaleProperties,
-  getScalePropertyNames,
   generateTypeScaleProperties,
   generateSpaceScaleProperties,
 } from '../../lib/scales.mjs'
@@ -84,36 +84,10 @@ test('generateScaleProperties', t => {
   t.end()
 })
 
-test('getScalePropertyNames', t => {
-  const properties = generateScaleProperties({
-    prefix: 'test',
-    stepsArray: [-2, -1, 0, 1, 2],
-    baseMin: 16,
-    baseMax: 20,
-    viewportMin: 320,
-    viewportMax: 1500,
-    scaleMin: 1.2,
-    scaleMax: 1.333
-  })
-
-  const result = getScalePropertyNames(properties).map(i => i.replaceAll(' ', ''))
-
-  const expected = [
-    '--test--2',
-    '--test--1',
-    '--test-0',
-    '--test-1',
-    '--test-2'
-  ].map(i => i.replaceAll(' ', ''))
-
-  t.deepEqual(result, expected, 'returns the expected list of property names')
-  t.end()
-})
-
 test('generateTypeScaleProperties', t => {
   const steps = 4
   const properties = generateTypeScaleProperties({ steps })
-  const propertyNames = getScalePropertyNames(properties)
+  const propertyNames = getCustomProperties(properties)
   const negatives = propertyNames.filter(p => p.includes('text--'))
   const basePlusPositives = propertyNames.filter(p => !p.includes('text--'))
 
@@ -126,7 +100,7 @@ test('generateTypeScaleProperties', t => {
 test('generateSpaceScaleProperties', t => {
   const steps = 4
   const properties = generateSpaceScaleProperties({ steps })
-  const propertyNames = getScalePropertyNames(properties)
+  const propertyNames = getCustomProperties(properties)
 
   const expectedPropertiesLength = steps * 2 - 1 // One base interval plus a symmetrical set of negative and positive intervals
 
