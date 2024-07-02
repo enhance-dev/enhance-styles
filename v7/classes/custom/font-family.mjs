@@ -2,7 +2,7 @@ import getCustomProperties from '../../lib/getCustomProperties.mjs'
 import fonts from '../../properties/fonts.mjs'
 
 export default function fontFamily(state = {}) {
-  const { config = {} } = state
+  const { config = {}, breakpoint = '' } = state
   const families = getCustomProperties(fonts({ config }))
 
   let output = ''
@@ -11,7 +11,7 @@ export default function fontFamily(state = {}) {
     output += '/*** Font Family ***/'
     families.forEach(family => {
       output += '\n'
-      output += `.${family.replace('--', '')} { font-family: var(${family}); }`
+      output += `.${family.replace('--', '')}${breakpoint} { font-family: var(${family}); }`
     })
   }
 

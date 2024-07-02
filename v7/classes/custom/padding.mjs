@@ -12,7 +12,7 @@ export default function padding(state = {}) {
   output += `.p-none${breakpoint} { padding: 0; }`
   directionEntries.forEach(dir => {
     output += '\n'
-    output += `.p${dir[0]}${breakpoint}-none { padding-${dir[1]}: 0; }`
+    output += `.p${dir[0]}-none${breakpoint} { padding-${dir[1]}: 0; }`
   })
 
   // Padding scale

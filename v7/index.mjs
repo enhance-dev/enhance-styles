@@ -82,12 +82,12 @@ export default function write(config) {
       // Basic classes
       output += background({ breakpoint })
       output += boxAlign({ breakpoint })
-      output += color({ breakpoint })
+      breakpoint === '' ? output += color() : ''
       output += cursor({ breakpoint })
-      output += debug({ breakpoint })
+      breakpoint === '' ? output += debug() : ''
       output += display({ breakpoint })
       output += flexbox({ breakpoint })
-      output += fontSmoothing({ breakpoint })
+      breakpoint === '' ? output += fontSmoothing() : ''
       output += fontStyle({ breakpoint })
       output += fontWeight({ breakpoint })
       output += inset({ breakpoint })
@@ -124,11 +124,12 @@ export default function write(config) {
 
     if (config.classes) {
       writeClasses()
-      Object.entries(breakpoints).forEach(b => {
+      Object.entries(breakpoints).forEach(breakpoint => {
+        const [label, width] = breakpoint
         output += '\n'
-        output += `/*** Breakpoint: ${b[0]} ***/\n`
-        output += `@media (min-width: ${b[1]}) {\n`
-        writeClasses(`-${b[0]}`)
+        output += `/*** Breakpoint: ${label} ***/\n`
+        output += `@media (min-width: ${width}) {\n`
+        writeClasses(`-${label}`)
         output += '\n}'
       })
     }
