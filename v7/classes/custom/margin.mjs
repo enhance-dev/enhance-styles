@@ -27,7 +27,7 @@ export default function margin(state = {}) {
   if (sizes.length) {
     sizes.forEach(size => {
       output += '\n'
-      output += `.m${size.replace('--space-', '')}${breakpoint} { margin: var(${size}); }}`
+      output += `.m${size.replace('--space-', '')}${breakpoint} { margin: var(${size}); }`
       directionEntries.forEach(dir => {
         output += '\n'
         output += `.m${dir[0]}${size.replace('--space-', '')}${breakpoint} { margin-${dir[1]}: var(${size}); }`

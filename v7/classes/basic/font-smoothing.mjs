@@ -1,4 +1,4 @@
-export default function smoothing() {
+export default function fontSmoothing() {
   return `
 /*** Font Smoothing ***/
 .font-smoothing {

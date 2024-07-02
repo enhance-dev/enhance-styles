@@ -43,22 +43,11 @@ export default function borders(state = {}) {
 .radius-pill${breakpoint} { border-radius: 9999px; }
 .radius-none${breakpoint} { border-radius: 0; }`
 
-  // Directional null radii 
-  directionEntries.forEach(dir => {
-    output += '\n'
-    output += `.radius-${dir[0]}-none${breakpoint} { border-${dir[1]}-radius: 0; }`
-  })
-
   // Radii scale
   if (radiusProperties.length) {
     radiusProperties.forEach((r, i) => {
       output += '\n'
       output += `.radius${i} { border-radius: var(${r}); }`
-
-      directionEntries.forEach(dir => {
-        output += '\n'
-        output += `.radius-${dir[0]}${i} { border-${dir[1]}-radius: var(${r}); }`
-      })
     })
   }
 

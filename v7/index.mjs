@@ -1,4 +1,5 @@
 import sheetHeader from './lib/sheet-header.mjs'
+import reset from './lib/reset.mjs'
 
 // Custom properties
 import borderRadius from './properties/border-radius.mjs'
@@ -19,18 +20,96 @@ import grid from './classes/custom/grid.mjs'
 import margin from './classes/custom/margin.mjs'
 import padding from './classes/custom/padding.mjs'
 
-export default function write(config) {
+// Basic classes
+import background from './classes/basic/background.mjs'
+import boxAlign from './classes/basic/box-align.mjs'
+import color from './classes/basic/color.mjs'
+import cursor from './classes/basic/cursor.mjs'
+import debug from './classes/basic/debug.mjs'
+import display from './classes/basic/display.mjs'
+import flexbox from './classes/basic/flexbox.mjs'
+import fontSmoothing from './classes/basic/font-smoothing.mjs'
+import fontStyle from './classes/basic/font-style.mjs'
+import fontWeight from './classes/basic/font-weight.mjs'
+import inset from './classes/basic/inset.mjs'
+import lineHeight from './classes/basic/line-height.mjs'
+import listStyle from './classes/basic/list-style.mjs'
+import objectFit from './classes/basic/object-fit.mjs'
+import objectPosition from './classes/basic/object-position.mjs'
+import opacity from './classes/basic/opacity.mjs'
+import order from './classes/basic/order.mjs'
+import outline from './classes/basic/outline.mjs'
+import overflow from './classes/basic/overflow.mjs'
+import position from './classes/basic/position.mjs'
+import size from './classes/basic/size.mjs'
+import textAlign from './classes/basic/text-align.mjs'
+import textDecoration from './classes/basic/text-decoration.mjs'
+import tracking from './classes/basic/tracking.mjs'
+import transform from './classes/basic/transform.mjs'
+import userSelect from './classes/basic/user-select.mjs'
+import visibility from './classes/basic/visibility.mjs'
+import whiteSpace from './classes/basic/white-space.mjs'
+import wordBreak from './classes/basic/word-break.mjs'
+import zIndex from './classes/basic/z-index.mjs'
 
+export default function write(config) {
   try {
-    // const { breakpoints = {} } = config
+    const { breakpoints = {} } = config
 
     let output = sheetHeader() + '\n\n'
 
-    function conditionallyWrite(field, generator) {
+    if (config.reset) {
+      output += reset()
+    }
+
+    function conditionallyWrite(field, generator, breakpoint = '') {
       if (field !== false) {
-        output += generator({ config })
+        output += generator({ config, breakpoint })
         output += '\n\n'
       }
+    }
+
+    function writeClasses(breakpoint = '') {
+      // Custom classes
+      conditionallyWrite(config.borders, borders, breakpoint)
+      conditionallyWrite(config.fonts, fontFamily, breakpoint)
+      conditionallyWrite(config.typeScale, fontSize, breakpoint)
+      conditionallyWrite(config.spaceScale, gap, breakpoint)
+      conditionallyWrite(config.grid, grid, breakpoint)
+      conditionallyWrite(config.spaceScale, margin, breakpoint)
+      conditionallyWrite(config.spaceScale, padding, breakpoint)
+
+      // Basic classes
+      output += background({ breakpoint })
+      output += boxAlign({ breakpoint })
+      output += color({ breakpoint })
+      output += cursor({ breakpoint })
+      output += debug({ breakpoint })
+      output += display({ breakpoint })
+      output += flexbox({ breakpoint })
+      output += fontSmoothing({ breakpoint })
+      output += fontStyle({ breakpoint })
+      output += fontWeight({ breakpoint })
+      output += inset({ breakpoint })
+      output += lineHeight({ breakpoint })
+      output += listStyle({ breakpoint })
+      output += objectFit({ breakpoint })
+      output += objectPosition({ breakpoint })
+      output += opacity({ breakpoint })
+      output += order({ breakpoint })
+      output += outline({ breakpoint })
+      output += overflow({ breakpoint })
+      output += position({ breakpoint })
+      output += size({ breakpoint })
+      output += textAlign({ breakpoint })
+      output += textDecoration({ breakpoint })
+      output += tracking({ breakpoint })
+      output += transform({ breakpoint })
+      output += userSelect({ breakpoint })
+      output += visibility({ breakpoint })
+      output += whiteSpace({ breakpoint })
+      output += wordBreak({ breakpoint })
+      output += zIndex({ breakpoint })
     }
 
     // Custom properties
@@ -43,17 +122,18 @@ export default function write(config) {
     conditionallyWrite(config.spaceScale, spaceScale)
     conditionallyWrite(config.typeScale, typeScale)
 
-    // Custom classes
-    conditionallyWrite(config.borders, borders)
-    conditionallyWrite(config.fonts, fontFamily)
-    conditionallyWrite(config.typeScale, fontSize)
-    conditionallyWrite(config.spaceScale, gap)
-    conditionallyWrite(config.grid, grid)
-    conditionallyWrite(config.spaceScale, margin)
-    conditionallyWrite(config.spaceScale, padding)
+    if (config.classes) {
+      writeClasses()
+      Object.entries(breakpoints).forEach(b => {
+        output += '\n'
+        output += `/*** Breakpoint: ${b[0]} ***/\n`
+        output += `@media (min-width: ${b[1]}) {\n`
+        writeClasses(`-${b[0]}`)
+        output += '\n}'
+      })
+    }
 
     return output
-
   } catch (err) {
     throw err
   }

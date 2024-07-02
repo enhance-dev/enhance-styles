@@ -19,7 +19,7 @@ export default function padding(state = {}) {
   if (sizes.length) {
     sizes.forEach(size => {
       output += '\n'
-      output += `.p${size.replace('--space-', '')}${breakpoint} { padding: var(${size}); }}`
+      output += `.p${size.replace('--space-', '')}${breakpoint} { padding: var(${size}); }`
       directionEntries.forEach(dir => {
         output += '\n'
         output += `.p${dir[0]}${size.replace('--space-', '')}${breakpoint} { padding-${dir[1]}: var(${size}); }`
