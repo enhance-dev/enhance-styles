@@ -58,10 +58,12 @@ export default function write(config) {
 
     let output = sheetHeader() + '\n\n'
 
+    // Allow optout of the CSS reset
     if (config.reset) {
       output += reset()
     }
 
+    // Run a CSS generator function only if its respective config field is truthy
     function conditionallyWrite(field, generator, breakpoint = '') {
       if (field !== false) {
         output += generator({ config, breakpoint })
@@ -70,7 +72,7 @@ export default function write(config) {
     }
 
     function writeClasses(breakpoint = '') {
-      // Custom classes
+      // Custom classes; optional based on their respective fields being truthy
       conditionallyWrite(config.borders, borders, breakpoint)
       conditionallyWrite(config.fonts, fontFamily, breakpoint)
       conditionallyWrite(config.typeScale, fontSize, breakpoint)
@@ -79,7 +81,7 @@ export default function write(config) {
       conditionallyWrite(config.spaceScale, margin, breakpoint)
       conditionallyWrite(config.spaceScale, padding, breakpoint)
 
-      // Basic classes
+      // Basic classes; some don't get rerun for each breakpoint
       output += background({ breakpoint })
       output += boxAlign({ breakpoint })
       breakpoint === '' ? output += color() : ''
@@ -112,7 +114,7 @@ export default function write(config) {
       output += zIndex({ breakpoint })
     }
 
-    // Custom properties
+    // Emit custom properties
     conditionallyWrite(config.borders.radii, borderRadius)
     conditionallyWrite(config.borders.widths, borderWidths)
     conditionallyWrite(config.color.scales, colorScales)
@@ -122,12 +124,15 @@ export default function write(config) {
     conditionallyWrite(config.spaceScale, spaceScale)
     conditionallyWrite(config.typeScale, typeScale)
 
+    // Optionally emit classes
     if (config.classes) {
+      // Write default classes
       writeClasses()
+      // Write media query scoped classes for each entry in `config.breakpoints`
       Object.entries(breakpoints).forEach(breakpoint => {
         const [label, width] = breakpoint
         output += '\n'
-        output += `/*** Breakpoint: ${label} ***/\n`
+        output += `/*** Breakpoint: ${label} (${width}) ***/\n\n`
         output += `@media (min-width: ${width}) {\n`
         writeClasses(`-${label}`)
         output += '\n}'

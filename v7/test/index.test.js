@@ -10,7 +10,6 @@ test('the write function', t => {
   validate({
     text: write(config),
     profile: 'css3svg',
-    warning: 0,
   }, function(err, data) {
     t.ok(data.validity, 'should generate valid CSS')
   })
