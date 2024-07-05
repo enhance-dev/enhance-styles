@@ -16,7 +16,9 @@ Contents:
 
 ### For Enhance
 
-Enhance Styles is optimized for use in [Enhance](https://enhance.dev), and is typically included in new Enhance projects by default (unless your Enhance app has been creating using a custom project template). If you need to add Enhance Styles to your Enhance app, follow the steps below.
+Enhance Styles is optimized for use in [Enhance](https://enhance.dev), and is typically included in new Enhance projects by default (unless your Enhance app has been created using a custom project template).
+
+If you need to add Enhance Styles to your Enhance app, follow the steps below.
 
 First, install [the Enhance Styles plugin](https://github.com/enhance-dev/arc-plugin-styles):
 ```shell
@@ -62,18 +64,20 @@ export default function Head () {
 }
 ```
 
-Restart your development server. You now have Enhance Styles up and running in your Enhance project.
+Restart your development server. You now have Enhance Styles up and running in your Enhance project. Styles will be automatically regenerated if changes are made to your [custom configuration](#customization) (if one exists).
 
 ### Standalone usage
 
-Enhance Styles can be used as a standalone library in any project or framework that allows for the insertion of arbitrary CSS files. The built-in CLI can be used both to generate CSS files for use as you like, or it can be used in more complex application pipelines to (re)generate CSS as required. The steps below demonstrate the basic usage, which can be used as a starting point for more advanced used cases.
+Enhance Styles can be used as a standalone library in any project or framework that allows for the insertion of arbitrary CSS files. The built-in CLI can be used both to generate CSS files for use, and in more complex application pipelines to (re)generate CSS as required.
+
+The steps below demonstrate the basic usage of the CLI, which can be used as a starting point for more advanced used cases.
 
 To begin, install Enhance Styles from NPM:
 ```shell
 npm i @enhance/styles
 ```
 
-With the project installed, you can now interact with its CLI via the use of [`npx`](https://docs.npmjs.com/cli/v10/commands/npx). For example, to generate a CSS file at the path `./public/enhance-styles.css` using the default configuration:
+With the package installed, you can now interact with its CLI via the use of [`npx`](https://docs.npmjs.com/cli/v10/commands/npx). For example, to generate a CSS file at the path `./public/enhance-styles.css` using the default configuration:
 
 ```shell
 npx enhance-styles --output=./public/enhance-styles.css
