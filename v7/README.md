@@ -77,7 +77,7 @@ To begin, install Enhance Styles from NPM:
 npm i @enhance/styles
 ```
 
-With the package installed, you can now interact with its CLI via the use of [`npx`](https://docs.npmjs.com/cli/v10/commands/npx). For example, to generate a CSS file at the path `./public/enhance-styles.css` using the default configuration:
+With the package installed, you can now interact with its CLI via the use of [`npx`](https://docs.npmjs.com/cli/v10/commands/npx). For example, to generate your styles at the path `./public/enhance-styles.css` using the default configuration:
 
 ```shell
 npx enhance-styles --output=./public/enhance-styles.css
