@@ -10,24 +10,11 @@ export default {
   },
   color: {
     scales: {
+      gray: '#808080',
     },
-    spots: {
-    },
-    ui: {
-      accent: '#00f',
-      background: '#fff',
-      body: '#222',
-      error: '#f00',
-      darkMode: {
-        accent: '#00f',
-        background: '#222',
-        body: '#eee',
-        error: '#f00',
-      }
-    },
+    spots: {},
   },
-  customProperties: {
-  },
+  customProperties: {},
   fonts: {
     sans: 'system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif',
     serif: 'Georgia, Cambria, Times New Roman, Times, serif',
