@@ -1,5 +1,5 @@
 export default {
-  classes: true,
+  classes: false,
   reset: true,
   borders: {
     radii: [2, '9999em'],
@@ -10,10 +10,11 @@ export default {
   },
   color: {
     scales: {
-      red: '#f00',
+      gray: '#808080',
     },
     spots: {
-      rebeccaPurple: '#663399',
+      magenta: '#ff0095',
+      p3magenta: 'color(display-p3 1 0 0.58)',
     },
   },
   customProperties: {

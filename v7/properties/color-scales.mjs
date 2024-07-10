@@ -19,7 +19,9 @@ function getColorScale(hslBaseColor, name) {
 export default function colorScales(state = {}) {
   const { config = {} } = state
   const { color = {} } = config
-  const { scales = { /* DEFAULTS HERE */ } } = color
+  const { scales = {
+    gray: '#808080',
+  } } = color
 
   let output = ''
 
