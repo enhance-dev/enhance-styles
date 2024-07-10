@@ -10,7 +10,7 @@ export default function borderRadius(state = {}) {
 
     radii.forEach((r, i) => {
       output += '\n'
-      output += `  --borderRadius-${i}: ${typeof r === 'number' ? r += 'px' : r};`
+      output += `  --borderRadius${i}: ${typeof r === 'number' ? r += 'px' : r};`
     })
 
     output += '\n}'

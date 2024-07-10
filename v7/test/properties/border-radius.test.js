@@ -7,7 +7,7 @@ test('config.borders.radii', t => {
     borderRadius({ config })
       .replaceAll(' ', '')
       .replaceAll('\n', '')
-      .includes(':root{--borderRadius-0:2px;--borderRadius-1:9999em;}'),
+      .includes(':root{--borderRadius0:2px;--borderRadius1:9999em;}'),
     'produces the expected border radii'
   )
   t.end()

@@ -10,7 +10,7 @@ export default function borderRadius(state = {}) {
 
     widths.forEach((w, i) => {
       output += '\n'
-      output += `  --borderWidth-${i}: ${typeof w === 'number' ? w += 'px' : w};`
+      output += `  --borderWidth${i}: ${typeof w === 'number' ? w += 'px' : w};`
     })
 
     output += '\n}'

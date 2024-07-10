@@ -132,7 +132,7 @@ export function generateScaleProperties({
 
   clampSteps.forEach(step => {
     const [[k, v]] = Object.entries(step)
-    css += `\n  --${prefix}-${k}: ${v};`
+    css += `\n  --${prefix}${k}: ${v};`
   })
 
   return css

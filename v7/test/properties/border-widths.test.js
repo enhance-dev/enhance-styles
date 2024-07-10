@@ -7,7 +7,7 @@ test('config.borders.widths', t => {
     borderWidths({ config })
       .replaceAll(' ', '')
       .replaceAll('\n', '')
-      .includes(':root{--borderWidth-0:0.125em;--borderWidth-1:2px;}'),
+      .includes(':root{--borderWidth0:0.125em;--borderWidth1:2px;}'),
     'produces the expected border widths'
   )
   t.end()
