@@ -1,8 +1,8 @@
-import { generateTypeScaleProperties } from '../lib/scales.mjs'
+import { generateTypeScaleProperties, defaultConfig } from '../lib/scales.mjs'
 
 export default function typeScaleProperties(state = {}) {
   const { config = {} } = state
-  const { typeScale = null } = config
+  const { typeScale = defaultConfig } = config
 
   let output = ''
 

@@ -15,12 +15,6 @@ export default {
     spots: {
       rebeccaPurple: '#663399',
     },
-    ui: {
-      accent: '#00f',
-      background: '#fff',
-      body: '#222',
-      error: '#f00',
-    },
   },
   customProperties: {
     preferredInlineSize: '52ch',
@@ -42,14 +36,6 @@ export default {
     scaleMin: 'minor-third',
     scaleMax: 'perfect-fourth',
   },
-  typeScale: {
-    steps: 3,
-    viewportMin: 320,
-    viewportMax: 1500,
-    baseMin: 16,
-    baseMax: 24,
-    scaleMin: 'minor-third',
-    scaleMax: 'perfect-fourth',
-  },
+  typeScale: false,
 }
 

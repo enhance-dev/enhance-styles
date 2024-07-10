@@ -1,7 +1,7 @@
 export default function borderRadius(state = {}) {
   const { config = {} } = state
   const { borders = {} } = config
-  const { radii = [2, 8, 16, 9999] } = borders
+  const { radii = [2, 4, 8, 9999] } = borders
 
   let output = ''
 

@@ -1,8 +1,8 @@
-import { generateSpaceScaleProperties } from '../lib/scales.mjs'
+import { generateSpaceScaleProperties, defaultConfig } from '../lib/scales.mjs'
 
 export default function spaceScaleProperties(state = {}) {
   const { config = {} } = state
-  const { spaceScale = null } = config
+  const { spaceScale = defaultConfig } = config
 
   let output = ''
 
