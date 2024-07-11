@@ -30,7 +30,7 @@ export default {
 }
 ```
 
-Note that, since you’re now exporting a JavaScript object, property names don’t need to be quoted by default, and additional conventions such as comments and hanging commas can be used.
+Note that, since you’re now exporting a JavaScript object, property names don’t need to be quoted by default, and additional conventions such as comments and trailing commas can be used.
 
 ### Property structure and naming
 
