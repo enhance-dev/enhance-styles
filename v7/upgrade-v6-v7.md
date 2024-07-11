@@ -108,9 +108,9 @@ customProperties: {
 
 The specification of colors in general has been overhauled in version 7 in the interest of clarity.
 
-Previously, colors defined in the `theme` object specified a base colour for generated color scales (e.g. `red` → `red-100`, `red-200`, etc), while colours defined in `colors` acted as spot colors (e.g. `crimson` → `crimson`). Additionally, the reserved properties `theme.fore`, `theme.back`, `theme.accent`, and `theme.error` were used to specify colors for [light-dark support](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), with the additional reserved property `theme.dark` used to override the automatically generated dark mode variants.
+Previously, colors defined in the `theme` object specified a base color for generated color scales (e.g. `red` → `red-100`, `red-200`, etc), while colors defined in `colors` acted as spot colors (e.g. `crimson` → `crimson`). Additionally, the reserved properties `theme.fore`, `theme.back`, `theme.accent`, and `theme.error` were used to specify colors for [light-dark support](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), with the additional reserved property `theme.dark` used to override the automatically generated dark mode variants.
 
-For version 7, `color` now acts as a parent object for all color related configuration. `color.scales` is used for specifying base colours for generated color scales, while `color.spots` is used for specifying one off spot colors. We have temporarily removed the `theme` property and support for automatic light-dark colors as this resulted in some confusion for users; we’re investigating the best way to reintroduce this functionality in an additive fashion in an upcoming release.
+For version 7, `color` now acts as a parent object for all color related configuration. `color.scales` is used for specifying base colors for generated color scales, while `color.spots` is used for specifying one off spot colors. We have temporarily removed the `theme` property and support for automatic light-dark colors as this resulted in some confusion for users; we’re investigating the best way to reintroduce this functionality in an additive fashion in an upcoming release.
 
 Before:
 
