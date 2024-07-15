@@ -114,7 +114,7 @@ Enhance Styles is a configurable CSS toolkit for generating CSS that adheres to 
 
 In short, we define parametric CSS as follows:
 
-1. Parametric CSS is derived from a **configurable styleguide** that constrains the central characteristics of a design language to a predefined set of values (for example: font sizes, spacing intervals, a colour palette…).
+1. Parametric CSS is derived from a **configurable styleguide** that constrains the central characteristics of a design language to a predefined set of values (for example: font sizes, spacing intervals, a color palette…).
 2. Parametric CSS generates discrete, single purpose units of style that are **composable** (single units can be combined to build complex designs), **complementary** (units implement one style and one style only, and thus do not interact or introduce side effects), and **constant** (the style a unit implements does not change unless the configuration is updated). These units of style can be in the form of classes, classes utilizing custom properties, or custom properties on their own.
 3. Parametric CSS serves as a base for **design systems and global styles**. While it can be used to apply those styles to discrete components, it is not intended to create bespoke styles local to specific components. Other CSS methodologies can be used in tandem for these design challenges, while relying on parametric CSS as a common baseline for performance, scalability, and versatility.
 
@@ -122,10 +122,50 @@ By referring to our approach as parametric CSS rather than by the name (or a mod
 
 Our modelling of parametric CSS draws on the work of designers and developers such as [Tim Brown](https://tbrown.org/) (and his work on [modular type on the web](https://alistapart.com/article/more-meaningful-typography/)), [Adam Morse](https://mrmrs.cc/)  ([Tachyons](https://tachyons.io/), [Components AI](https://components.ai/)), [Brent Jackson](https://jxnblk.com/) ([Theme UI](https://theme-ui.com/)), and [James Gilyead](https://www.hustlersquad.net/) & [Trys Mudford](https://www.trysmudford.com/) ([Utopia](https://utopia.fyi/)), among others.
 
+### Available in two flavours
+
 Out of the box, Enhance Styles provides a wide base of parametric single purpose classes and custom properties that can be used as a global styling system. These classes and custom properties are derived from a fully configurable styleguide, making Enhance Styles ideal for use with new and preexisting design systems and brand standards.
 
-For those who wish to construct their own CSS classes, Enhance Styles can be configured to emit only custom properties for use in application stylesheets. This allows authors to leverage its parametric configurability (and its automation of creating fluid scales, colour palettes, etc) while utilizing whatever additional CSS methodology they feel most comfortable with.
+For those who wish to construct their own CSS classes, Enhance Styles can be configured to emit *only* custom properties, which can be used in your own application stylesheets. This allows authors to leverage its parametric configurability (and its automation of creating fluid scales, color palettes, etc) while utilizing whichever CSS methodologies they feel most comfortable with.
 
 For further guidance on working with Enhance Styles, refer to [the Enhance Styles microsite](?)
 
-# Customization
+## Customization
+
+Enhance Styles’ generated custom properties and classes can be configured to your liking, making it extremely suitable for integration with new and existing design systems and brand guidelines.
+
+Customization of Enhance Styles is managed via a configuration file; see [Installation and usage](#installation-and-usage) for guidance on how to specify the configuration file based on how you’re using Enhance Styles.
+
+The configuration file must provide an object as its default export. The properties of this configuration object are documented below.
+
+| Property | Description | Type |
+|-|-|-|
+| `classes` | Enable to include single purpose classes in Enhance Styles’ output; disable to only emit custom properties | boolean |
+| `reset` | Enable to include a CSS reset with Enhance Styles’ output; disable to exclude it | boolean |
+| `borders` | -|-|
+| `borders.radii` | Values to use for border radius properties and classes | array of strings and/or numbers |
+| `borders.widths` | Values to use for border width properties and classes | array of strings and/or numbers |
+| `breakpoints` | Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified | 
+| `color` | -|-|
+| `color.scales` | Set of named colors with values to use as the median entry for generated color scales; resulting scales will use the key of each entry as their name plus a base 100 suffix from 100 to 900; entries from 400–100 will be progressively lighter; entries from 600–900 will be progressively darker; the -500 entry will duplicate the value provided for each color; colors must be suppled as hexadecimal values | object of string values |
+| `color.spots` | Set of named spot colors to use for color custom properties; colors can be supplied in any standardized format | object of string values |
+| `customProperties` | Set of arbitrary names and values to use for CSS custom properties | object of string values |
+| `fonts` | Set of named font stacks to use for font custom properties and classes | object of string values |
+| `grid` | -|-|
+| `grid.steps` | The number of steps to use when generating `[column\|row]-[start\|end]` grid classes | number |
+| `spaceScale` | Configuration for the fluid modular spacing scale custom properties and margin, padding, and gap classes | -|
+| `spaceScale.steps` | The number of symmetrical intervals to create for the space scale, plus the base size | number |
+| `spaceScale.viewportMin` | The width, in pixels, of the minimum viewport width the scale should be fluid within | number |
+| `spaceScale.viewportMax` | The width, in pixels, of the maximum viewport width the scale should be fluid within | number |
+| `spaceScale.baseMin` | The base spacing interval size, in pixels, at the minimum viewport width | number |
+| `spaceScale.baseMax` | The base spacing interval size, in pixels, at the maximum viewport width | number |
+| `spaceScale.scaleMin` | The ratio, either as a rational number or a named ratio, to use for spacing intervals at the minimum viewport width | number or string |
+| `spaceScale.scaleMax` | The ratio, either as a rational number or a named ratio, to use for spacing intervals at the maximum viewport width | number or string |
+| `typeScale` | Configuration for the fluid modular type scale custom properties and associated font size classes | -|
+| `typeScale.steps` | The number of positive intervals, including the base size, for the type scale (two negative intervals added automatically) | number |
+| `typeScale.viewportMin` | The width, in pixels, of the minimum viewport width the scale should be fluid within | number |
+| `typeScale.viewportMax` | The width, in pixels, of the maximum viewport width the scale should be fluid within | number |
+| `typeScale.baseMin` | The base font size, in pixels, at the minimum viewport width | number |
+| `typeScale.baseMax` | The base font size, in pixels, at the maximum viewport width | number |
+| `typeScale.scaleMin` | The ratio, either as a rational number or a named ratio, to use for font size intervals at the minimum viewport width | number or string |
+| `typeScale.scaleMax` | The ratio, either as a rational number or a named ratio, to use for font size intervals at the maximum viewport width | number or string |
