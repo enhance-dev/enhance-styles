@@ -7,7 +7,7 @@ test('config.color.spots', t => {
     colorSpots({ config })
       .replaceAll(' ', '')
       .replaceAll('\n', '')
-      .includes(':root{--rebeccaPurple:#663399;}'),
+      .includes(':root{--magenta:#ff0095;--p3magenta:color(display-p3100.58);}'), // trimmed spaces in color() aren't valid CSS but this works for testing purposes
     'produces the expected spot colors'
   )
   t.end()

@@ -4,15 +4,15 @@ import config from '../fixtures/styleguide.mjs'
 
 const expectedMinified = `
 :root {
-  --red100: hsl(0, 100%, 90%);
-  --red200: hsl(0, 100%, 80%);
-  --red300: hsl(0, 100%, 70%);
-  --red400: hsl(0, 100%, 60%);
-  --red500: hsl(0, 100%, 50%);
-  --red600: hsl(0, 100%, 40%);
-  --red700: hsl(0, 100%, 30%);
-  --red800: hsl(0, 100%, 20%);
-  --red900: hsl(0, 100%, 10%);
+  --gray100: hsl(0, 0%, 90%);
+  --gray200: hsl(0, 0%, 80%);
+  --gray300: hsl(0, 0%, 70%);
+  --gray400: hsl(0, 0%, 60%);
+  --gray500: hsl(0, 0%, 50.2%);
+  --gray600: hsl(0, 0%, 40%);
+  --gray700: hsl(0, 0%, 30%);
+  --gray800: hsl(0, 0%, 20%);
+  --gray900: hsl(0, 0%, 10%);
 }`.replaceAll(' ', '').replaceAll('\n', '')
 
 test('config.color.scales', t => {
