@@ -136,7 +136,7 @@ Enhance Styles’ generated custom properties and classes can be configured to y
 
 Customization of Enhance Styles is managed via a configuration file; see [Installation and usage](#installation-and-usage) for guidance on how to specify the configuration file based on how you’re using Enhance Styles.
 
-The configuration file must provide an object as its default export. The properties of this configuration object are documented below.
+The configuration file must provide an object as its default export (i.e. `export default { /*…*/ }`. The properties of this configuration object are documented below.
 
 | Property | Description | Type |
 |-|-|-|
