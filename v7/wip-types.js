@@ -6,12 +6,12 @@
  * @property {object} [borders] - Parent object for border properties
  * @property {(string | number)[]} [borders.radii] - Values to use for border radius properties and classes
  * @property {(string | number)[]} [borders.widths] - Values to use for border width properties and classes
- * @property {{[string]: string}} [breakpoints] - Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified
+ * @property {{[key: string]: string}} [breakpoints] - Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified
  * @property {object} [color] - Parent object for color configuration
- * @property {{[string]: string}} [color.scales] - Set of named colors with values to use as the median entry for generated color scales; resulting scales will use the key of each entry as their name plus a base 100 suffix from 100 to 900; entries from 400–100 will be progressively lighter; entries from 600–900 will be progressively darker; the -500 entry will duplicate the value provided for each color; colors must be suppled as hexadecimal values
- * @property {{[string]: string}} [color.spots] - Set of named spot colors to use for color custom properties; colors can be supplied in any standardized format
- * @property {{[string]: string}} [customProperties] - Set of arbitrary names and string values to use for CSS custom properties
- * @property {{[string]: string}} [fonts] - Set of named font stacks to use for font custom properties and classes
+ * @property {{[key: string]: string}} [color.scales] - Set of named colors with values to use as the median entry for generated color scales; resulting scales will use the key of each entry as their name plus a base 100 suffix from 100 to 900; entries from 400–100 will be progressively lighter; entries from 600–900 will be progressively darker; the -500 entry will duplicate the value provided for each color; colors must be suppled as hexadecimal values
+ * @property {{[key: string]: string}} [color.spots] - Set of named spot colors to use for color custom properties; colors can be supplied in any standardized format
+ * @property {{[key: string]: string}} [customProperties] - Set of arbitrary names and string values to use for CSS custom properties
+ * @property {{[key: string]: string}} [fonts] - Set of named font stacks to use for font custom properties and classes
  * @property {object} [grid] - Parent object for grid configuration
  * @property {number} [grid.steps] - The number of steps to use when generating [column|row]-[start|end] grid classes
  * @property {object} [spaceScale] - Parent object for space scale configuration
