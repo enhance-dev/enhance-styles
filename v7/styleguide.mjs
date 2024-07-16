@@ -1,3 +1,6 @@
+/**
+ * @type {import('./styleguide.types.mjs').EnhanceStylesConfig}
+ */
 export default {
   classes: true,
   reset: true,
