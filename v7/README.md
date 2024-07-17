@@ -196,4 +196,3 @@ If you’d like to visualize the output of these scales before you have content 
 
 Additional documentation and guidelines can be found on the [Enhance Styles microsite](?)
 
-## Prior art
