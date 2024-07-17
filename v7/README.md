@@ -14,8 +14,6 @@ Contents:
 - [Customization](#customization)
 - [Further documentation](#further-documentation)
 
-For further guidance and documentation, refer to [the Enhance Styles microsite](?)
-
 ## Installation and usage
 
 ### For Enhance
