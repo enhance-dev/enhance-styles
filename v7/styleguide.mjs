@@ -5,7 +5,7 @@ export default {
   classes: true,
   reset: true,
   borders: {
-    radii: [2, 8, 16, 9999],
+    radii: [2, 4, 8, 9999],
     widths: [1, 2, 4],
   },
   breakpoints: {

@@ -1,10 +1,7 @@
 export default function colorSpots(state = {}) {
   const { config = {} } = state
   const { color = {} } = config
-  const { spots = {
-    magenta: '#ff0095',
-    p3magenta: 'color(display-p3 1 0 0.58)',
-  } } = color
+  const { spots = {} } = color
 
   let output = ''
 

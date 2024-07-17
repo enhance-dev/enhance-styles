@@ -9,9 +9,10 @@ Contents:
   - [Standalone usage](#standalone-usage)
 - [Overview](#overview)
   - [What is parametric CSS?](#what-is-parametric-css)
+  - [Prior art](#prior-art)
+  - [Optional classes](#optional-classes)
 - [Customization](#customization)
-- Further documentation
-- Prior art
+- [Further documentation](#further-documentation)
 
 For further guidance and documentation, refer to [the Enhance Styles microsite](?)
 
@@ -118,11 +119,13 @@ In short, we define parametric CSS as follows:
 2. Parametric CSS generates discrete, single purpose units of style that are **composable** (single units can be combined to build complex designs), **complementary** (units implement one style and one style only, and thus do not interact or introduce side effects), and **constant** (the style a unit implements does not change unless the configuration is updated). These units of style can be in the form of classes, classes utilizing custom properties, or custom properties on their own.
 3. Parametric CSS serves as a base for **design systems and global styles**. While it can be used to apply those styles to discrete components, it is not intended to create bespoke styles local to specific components. Other CSS methodologies can be used in tandem for these design challenges, while relying on parametric CSS as a common baseline for performance, scalability, and versatility.
 
+### Prior art
+
 By referring to our approach as parametric CSS rather than by the name (or a modification of) an existing methodology, we’re not looking to disregard the important, category defining work of other authors, but rather to clarify and assert the principles behind our approach. 
 
 Our modelling of parametric CSS draws on the work of designers and developers such as [Tim Brown](https://tbrown.org/) (and his work on [modular type on the web](https://alistapart.com/article/more-meaningful-typography/)), [Adam Morse](https://mrmrs.cc/)  ([Tachyons](https://tachyons.io/), [Components AI](https://components.ai/)), [Brent Jackson](https://jxnblk.com/) ([Theme UI](https://theme-ui.com/)), and [James Gilyead](https://www.hustlersquad.net/) & [Trys Mudford](https://www.trysmudford.com/) ([Utopia](https://utopia.fyi/)), among others.
 
-### Available in two flavours
+### Optional classes
 
 Out of the box, Enhance Styles provides a wide base of parametric single purpose classes and custom properties that can be used as a global styling system. These classes and custom properties are derived from a fully configurable styleguide, making Enhance Styles ideal for use with new and preexisting design systems and brand standards.
 
@@ -140,32 +143,59 @@ The configuration file must provide an object as its default export (i.e. `expor
 
 | Property | Description | Type |
 |-|-|-|
-| `classes` | Enable to include single purpose classes in Enhance Styles’ output; disable to only emit custom properties | boolean |
-| `reset` | Enable to include a CSS reset with Enhance Styles’ output; disable to exclude it | boolean |
-| `borders` | -|-|
-| `borders.radii` | Values to use for border radius properties and classes | array of strings and/or numbers |
-| `borders.widths` | Values to use for border width properties and classes | array of strings and/or numbers |
-| `breakpoints` | Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified | 
-| `color` | -|-|
-| `color.scales` | Set of named colors with values to use as the median entry for generated color scales; resulting scales will use the key of each entry as their name plus a base 100 suffix from 100 to 900; entries from 400–100 will be progressively lighter; entries from 600–900 will be progressively darker; the -500 entry will duplicate the value provided for each color; colors must be suppled as hexadecimal values | object of string values |
-| `color.spots` | Set of named spot colors to use for color custom properties; colors can be supplied in any standardized format | object of string values |
-| `customProperties` | Set of arbitrary names and values to use for CSS custom properties | object of string values |
-| `fonts` | Set of named font stacks to use for font custom properties and classes | object of string values |
-| `grid` | -|-|
-| `grid.steps` | The number of steps to use when generating `[column\|row]-[start\|end]` grid classes | number |
-| `spaceScale` | Configuration for the fluid modular spacing scale custom properties and margin, padding, and gap classes | -|
-| `spaceScale.steps` | The number of symmetrical intervals to create for the space scale, plus the base size | number |
-| `spaceScale.viewportMin` | The width, in pixels, of the minimum viewport width the scale should be fluid within | number |
-| `spaceScale.viewportMax` | The width, in pixels, of the maximum viewport width the scale should be fluid within | number |
-| `spaceScale.baseMin` | The base spacing interval size, in pixels, at the minimum viewport width | number |
-| `spaceScale.baseMax` | The base spacing interval size, in pixels, at the maximum viewport width | number |
-| `spaceScale.scaleMin` | The ratio, either as a rational number or a named ratio, to use for spacing intervals at the minimum viewport width | number or string |
-| `spaceScale.scaleMax` | The ratio, either as a rational number or a named ratio, to use for spacing intervals at the maximum viewport width | number or string |
-| `typeScale` | Configuration for the fluid modular type scale custom properties and associated font size classes | -|
-| `typeScale.steps` | The number of positive intervals, including the base size, for the type scale (two negative intervals added automatically) | number |
-| `typeScale.viewportMin` | The width, in pixels, of the minimum viewport width the scale should be fluid within | number |
-| `typeScale.viewportMax` | The width, in pixels, of the maximum viewport width the scale should be fluid within | number |
-| `typeScale.baseMin` | The base font size, in pixels, at the minimum viewport width | number |
-| `typeScale.baseMax` | The base font size, in pixels, at the maximum viewport width | number |
-| `typeScale.scaleMin` | The ratio, either as a rational number or a named ratio, to use for font size intervals at the minimum viewport width | number or string |
-| `typeScale.scaleMax` | The ratio, either as a rational number or a named ratio, to use for font size intervals at the maximum viewport width | number or string |
+| `classes` | Enable to include single purpose classes in Enhance Styles’ output; disable to only emit custom properties | boolean | `true` |
+| `reset` | Enable to include a CSS reset with Enhance Styles’ output; disable to exclude it | boolean | `true` |
+| `borders` | The parent object for border configurations | object | - |
+| `borders.radii` | Values to use for border radius properties and classes | array of strings and/or numbers | `[2, 4, 8, 9999]` |
+| `borders.widths` | Values to use for border width properties and classes | array of strings and/or numbers | `[1, 2, 4]` |
+| `breakpoints` | Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified | - |
+| `color` | The parent object for color configurations | object | - |
+| `color.scales` | Set of named colors with values to use as the median entry for generated color scales; resulting scales will use the key of each entry as their name plus a base 100 suffix from 100 to 900; entries from 400–100 will be progressively lighter; entries from 600–900 will be progressively darker; the -500 entry will duplicate the value provided for each color; colors must be suppled as hexadecimal values | object of string values | `{ gray: '#808080'  }` |
+| `color.spots` | Set of named spot colors to use for color custom properties; colors can be supplied in any standardized format | object of string values | - |
+| `customProperties` | Set of arbitrary names and values to use for CSS custom properties | object of string values | - |
+| `fonts` | Set of named font stacks to use for font custom properties and classes | object of string values | `{ sans: '…', serif: '…', mono: '…' }` |
+| `grid` | The parent object for grid configurations | object | - |
+| `grid.steps` | The number of steps to use when generating `[column\|row]-[start\|end]` grid classes | number | `6` |
+| `spaceScale` | Configuration for the fluid modular spacing scale custom properties and margin, padding, and gap classes | object | - |
+| `spaceScale.steps` | The number of symmetrical intervals to create for the space scale, plus the base size | number | `6` |
+| `spaceScale.viewportMin` | The width, in pixels, of the minimum viewport width the scale should be fluid within | number | `320` |
+| `spaceScale.viewportMax` | The width, in pixels, of the maximum viewport width the scale should be fluid within | number | `1500` |
+| `spaceScale.baseMin` | The base spacing interval size, in pixels, at the minimum viewport width | number | `16` |
+| `spaceScale.baseMax` | The base spacing interval size, in pixels, at the maximum viewport width | number | `18` |
+| `spaceScale.scaleMin` | The ratio, either as a rational number or a named ratio, to use for spacing intervals at the minimum viewport width | number or string | `minor-third` |
+| `spaceScale.scaleMax` | The ratio, either as a rational number or a named ratio, to use for spacing intervals at the maximum viewport width | number or string | `perfect-fourth` |
+| `typeScale` | Configuration for the fluid modular type scale custom properties and associated font size classes | object | - |
+| `typeScale.steps` | The number of positive intervals, including the base size, for the type scale (two negative intervals added automatically) | number | `6` |
+| `typeScale.viewportMin` | The width, in pixels, of the minimum viewport width the scale should be fluid within | number | `320` |
+| `typeScale.viewportMax` | The width, in pixels, of the maximum viewport width the scale should be fluid within | number | `1500` |
+| `typeScale.baseMin` | The base font size, in pixels, at the minimum viewport width | number | `16` |
+| `typeScale.baseMax` | The base font size, in pixels, at the maximum viewport width | number | `18` |
+| `typeScale.scaleMin` | The ratio, either as a rational number or a named ratio, to use for font size intervals at the minimum viewport width | number or string | `minor-third` |
+| `typeScale.scaleMax` | The ratio, either as a rational number or a named ratio, to use for font size intervals at the maximum viewport width | number or string | `perfect-fourth` |
+
+For the space and type scales, the following common ratios can be referenced by name for the `scaleMin` and `scaleMax` properties:
+
+```javascript
+{
+  'minor-second': 1.067,
+  'major-second': 1.125,
+  'minor-third': 1.2,
+  'major-third': 1.25,
+  'perfect-fourth': 1.333,
+  'augmented-fourth': 1.414,
+  'perfect-fifth': 1.5,
+  'golden-ratio': 1.618,
+  'major-sixth': 1.667,
+  'minor-seventh': 1.778,
+  'major-seventh': 1.875,
+  octave: 2,
+}
+```
+
+If you’d like to visualize the output of these scales before you have content to test them with, we recommend tools such as [Tim Brown’s modularscale.com](https://www.modularscale.com/) to do so.
+
+## Further documentation
+
+Additional documentation and guidelines can be found on the [Enhance Styles microsite](?)
+
+## Prior art
