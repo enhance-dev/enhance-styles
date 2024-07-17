@@ -146,7 +146,7 @@ The configuration file must provide an object as its default export (i.e. `expor
 | `borders` | The parent object for border configurations | object | - |
 | `borders.radii` | Values to use for border radius properties and classes | array of strings and/or numbers | `[2, 4, 8, 9999]` |
 | `borders.widths` | Values to use for border width properties and classes | array of strings and/or numbers | `[1, 2, 4]` |
-| `breakpoints` | Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified | - |
+| `breakpoints` | Named breakpoints enumerating min-width viewport media query values; breakpoint scoped classes will be suffixed with the names of the keys of this object at the viewport width specified | object | - |
 | `color` | The parent object for color configurations | object | - |
 | `color.scales` | Set of named colors with values to use as the median entry for generated color scales; resulting scales will use the key of each entry as their name plus a base 100 suffix from 100 to 900; entries from 400–100 will be progressively lighter; entries from 600–900 will be progressively darker; the -500 entry will duplicate the value provided for each color; colors must be suppled as hexadecimal values | object of string values | `{ gray: '#808080'  }` |
 | `color.spots` | Set of named spot colors to use for color custom properties; colors can be supplied in any standardized format | object of string values | - |
