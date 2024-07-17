@@ -139,8 +139,8 @@ Customization of Enhance Styles is managed via a configuration file; see [Instal
 
 The configuration file must provide an object as its default export (i.e. `export default { /*…*/ }`. The properties of this configuration object are documented below.
 
-| Property | Description | Type |
-|-|-|-|
+| Property | Description | Type | Default |
+|-|-|-|-|
 | `classes` | Enable to include single purpose classes in Enhance Styles’ output; disable to only emit custom properties | boolean | `true` |
 | `reset` | Enable to include a CSS reset with Enhance Styles’ output; disable to exclude it | boolean | `true` |
 | `borders` | The parent object for border configurations | object | - |
